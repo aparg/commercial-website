@@ -102,50 +102,43 @@ export const getSalesData = async (offset, limit, city, listingType) => {
 export const getFilteredRetsData = async (queryParams) => {
   try {
     //all the necessary queries possible
-    let selectQuery = `${
-      queryParams.city ? `Municipality=${queryParams.city}` : ""
-    }${
-      queryParams.saleLease
-        ? `${queryParams.city ? "," : ""}SaleLease=${queryParams.saleLease}`
-        : ""
-    }${
-      queryParams.bed
-        ? `${queryParams.bed ? "," : ""}Bedrooms=${queryParams.bed}`
-        : ""
-    }`;
-    const skipQuery = `${queryParams.offset}`;
-    const limitQuery = `${queryParams.limit}`;
-    let rangeQuery =
-      queryParams.minListPrice || queryParams.washroom
-        ? `minListPrice=${queryParams.minListPrice},minWashrooms=${queryParams.washroom}`
-        : "";
+
+    let selectQueryArray = [];
+
+    queryParams.city &&
+      selectQueryArray.push(`Municipality=${queryParams.city}`);
+
+    queryParams.saleLease &&
+      selectQueryArray.push(`SaleLease=${queryParams.saleLease}`);
 
     if (queryParams.houseType) {
-      const houseTypeQuery = `,Use=value`;
+      const houseTypeQuery = `Use=value`;
       queryParams.houseType.forEach((param, index) => {
-        selectQuery += houseTypeQuery.replace(
-          "value",
-          encodeURIComponent(param)
+        selectQueryArray.push(
+          houseTypeQuery.replace("value", encodeURIComponent(param))
         );
-        if (index !== queryParams.houseType.length - 1) {
-          selectQuery += ",";
-        }
       });
     }
+    const skipQuery = `${queryParams.offset}`;
+    const limitQuery = `${queryParams.limit}`;
+    let rangeQuery = queryParams.minListPrice
+      ? `minListPrice=${queryParams.minListPrice}`
+      : "";
 
     if (queryParams.hasBasement) {
-      selectQuery += `,Basement1=Apartment`;
+      selectQueryArray.push(`Basement1=Apartment`);
     }
 
     if (queryParams.sepEntrance) {
-      selectQuery += `,Basement2=Sep Entrance`;
+      selectQueryArray.push(`Basement2=Sep Entrance`);
     }
+    const selectQuery = selectQueryArray.join(",");
     if (queryParams.maxListPrice > queryParams.minListPrice) {
       rangeQuery += `,maxListPrice=${queryParams.maxListPrice}`;
     }
 
     if (queryParams.priceDecreased) {
-      selectQuery += `,PriceDecreased=true`;
+      selectQueryArray.push(`PriceDecreased=true`);
     }
     let url = "";
 

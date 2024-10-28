@@ -23,7 +23,7 @@ const SeeListings = () => {
                   href={generateURL({ cityVal: "Toronto" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Toronto Properties for Sale
+                  Toronto Businesses for Sale
                 </Link>
               </li>
               <li>
@@ -31,7 +31,7 @@ const SeeListings = () => {
                   href={generateURL({ cityVal: "Ottawa" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Ottawa Properties for Sale
+                  Ottawa Businesses for Sale
                 </Link>
               </li>
               <li>
@@ -39,7 +39,7 @@ const SeeListings = () => {
                   href={generateURL({ cityVal: "Mississauga" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Mississauga Properties for Sale
+                  Mississauga Businesses for Sale
                 </Link>
               </li>
               <li>
@@ -47,7 +47,7 @@ const SeeListings = () => {
                   href={generateURL({ cityVal: "Ajax" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Ajax Properties for Sale
+                  Ajax Businesses for Sale
                 </Link>
               </li>
             </ul>
@@ -59,42 +59,42 @@ const SeeListings = () => {
             <ul className="flex-col justify-center text-center">
               <li>
                 <Link
-                  href={generateURL({ houseTypeVal: "semi detached" })}
+                  href={generateURL({ houseTypeVal: "restaurant" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Semi detached Properties for Sale
+                  Restaurant for Sale
                 </Link>
               </li>
               <li>
                 <Link
-                  href={generateURL({ houseTypeVal: "detached" })}
+                  href={generateURL({ houseTypeVal: "motel" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Detached Properties for Sale
+                  Motels for Sale
                 </Link>
               </li>
               <li>
                 <Link
-                  href={generateURL({ houseTypeVal: "duplex" })}
+                  href={generateURL({ houseTypeVal: "land" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Duplex Properties for Sale
+                  Land for Sale
                 </Link>
               </li>
               <li>
                 <Link
-                  href={generateURL({ houseTypeVal: "triplex" })}
+                  href={generateURL({ houseTypeVal: "gas station" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Triplex Properties for Sale
+                  Gas stations for Sale
                 </Link>
               </li>
               <li>
                 <Link
-                  href={generateURL({ houseTypeVal: "town house" })}
+                  href={generateURL({ houseTypeVal: "convenience store" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Town house for Sale
+                  Convenience store for Sale
                 </Link>
               </li>
             </ul>
@@ -107,7 +107,7 @@ const SeeListings = () => {
                   href={generateURL({ saleLeaseVal: "sale" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
-                  Ontario Properties for Sale
+                  Ontario Businesses for Sale
                 </Link>
               </li>
               <li>

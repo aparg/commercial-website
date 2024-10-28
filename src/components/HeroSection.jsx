@@ -44,7 +44,7 @@ const HeroSection = () => {
             ></img> */}
             <h1 className="text-[1.3rem] sm:text-[3rem] font-extrabold pb-0 mb-0 mt-2 mt-md-0 relative text-center">
               <span className="d-block mb-2 text-black">Find Your Next </span>{" "}
-              <span className="text-black">Commercial Property </span>
+              <span className="text-black">Business With Us! </span>
             </h1>
 
             {/* <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-12">
@@ -71,9 +71,7 @@ const HeroSection = () => {
             </div>
             <div className="text-medium sm:text-xl mt-2 text-center">
               Find{" "}
-              <span className="font-bold">
-                commercial properties for sale or lease
-              </span>{" "}
+              <span className="font-bold">businesses for sale or lease</span>{" "}
               across Ontario!
             </div>
           </div>
@@ -89,7 +87,7 @@ export default HeroSection;
   /* <div className="w-full lg:w-1/2 relative order-1 sm:order-2">
             <Image
               src="/hero-img.png"
-              alt="Commercial Properties"
+              alt="Businesses"
               width="800"
               height="600"
               className="rounded-lg h-[400px] sm:h-[500px] lg:h-[600px]"

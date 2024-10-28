@@ -207,7 +207,7 @@ export const houseType = {
   // town: { name: "Town House", value: ".A.", slug: "town-house" },
   // duplex: { name: "Duplex", value: ".J.", slug: "duplex-homes" },
   // triplex: { name: "Triplex", value: ".K.", slug: "triplex-homes" },
-  all: { name: "House Type", value: null },
+  all: { name: "Business Type", value: null },
   gas: {
     name: "Gas Station",
     value: "Gas Stations",
@@ -228,5 +228,9 @@ export const houseType = {
     value: "Restaurant",
     slug: "restaurant",
   },
-  land: { name: "Land", value: "Land & Buildings", slug: "land" },
+  land: {
+    name: "Land",
+    value: "Residential",
+    slug: "land",
+  },
 };

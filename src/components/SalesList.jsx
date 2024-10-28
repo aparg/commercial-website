@@ -56,15 +56,9 @@ const SalesList = ({
       saleLease: Object.values(saleLease).filter(
         (state) => state.name === filterState.saleLease
       )[0].value,
-      bed: Object.values(bedCount).find(
-        (bedObj) => bedObj.name === filterState.bed
-      )?.value,
       minListPrice: Number(filterState.priceRange?.min ?? 0),
       maxListPrice: Number(filterState.priceRange?.max ?? 0),
       houseType: _getMergedHouseType(filterState),
-      hasBasement: filterState.hasBasement,
-      sepEntrance: filterState.sepEntrance,
-      washroom: filterState.washroom,
       priceDecreased: filterState.priceDecreased,
     };
 

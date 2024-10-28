@@ -10,11 +10,13 @@ import PropertiesDisplayer from "@/components/PropertiesDisplayer";
 import { cache } from "sharp";
 import MobilePromo from "@/components/MobilePromo";
 import SeeListings from "@/components/SeeListings";
+import SpecificListings from "@/components/SpecificListings";
+import { houseType } from "@/constant";
 
 export const metadata = {
-  title: "Commercial Website | Commercial Properties in Ontario",
+  title: "Commercial Website | Businesses in Ontario",
   description:
-    "Commercial Website is Canada's Top Destination for Commercial Properties such as Townhomes, Detached & Semi Detached homes. The home listings are updated every minutes. Check out 100s of properties listed in Canada.",
+    "Commercial Website is Canada's Top Destination for Businesses such as Townhomes, Detached & Semi Detached homes. The home listings are updated every minutes. Check out 100s of properties listed in Canada.",
   keywords: "resale, properties, Ontario, Canada, low-rise, homes",
 };
 
@@ -41,6 +43,25 @@ export default async function Home() {
     INITIAL_LIMIT,
     "Oakville"
   );
+  const RESTAURANTS = await getFilteredRetsData({
+    houseType: ["Restaurant"],
+    skip: 0,
+    limit: 3,
+    range: undefined,
+  });
+  const MOTELS = await getFilteredRetsData({
+    houseType: ["Convenience/Variety"],
+    skip: 0,
+    limit: 3,
+    range: undefined,
+  });
+  const GASSTATIONS = await getFilteredRetsData({
+    houseType: ["Gas Stations"],
+    skip: 0,
+    limit: 3,
+    range: undefined,
+  });
+
   // const fetchFireplacesData = async () => {
   //   const response = await fetch(
   //     "https://rets.dolphy.ca/commercial/Properties/?$range=minFireplacesTotal=1&$limit=4",
@@ -130,7 +151,14 @@ export default async function Home() {
         >
           <Slider data={MISSISAUGAHOMES} type="resale" />
         </PropertyDisplaySection>
-
+        <SpecificListings
+          data={[
+            { data: RESTAURANTS, topic: "Latest Restaurant Listings" },
+            { data: MOTELS, topic: "Latest Convenience Store Listings" },
+            { data: GASSTATIONS, topic: "Latest Gas Station Listings" },
+          ]}
+          topic="Hot Listings"
+        />
         <PropertyDisplaySection
           title="Explore properties in Oakville"
           subtitle=""
