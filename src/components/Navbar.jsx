@@ -64,7 +64,7 @@ const Navbar = (props) => {
 
   function extractCityname(url) {
     const regex =
-      /\/ontario\/([^/]+)\/(?:town-house|detached-homes|semi-detached-homes|duplex-homes|triplex-homes|homes)?-(?:for-sale|for-lease)/;
+      /\/ontario\/([^/]+)\/(?:gas-station|convenience-stores|motel|restaurant|land|businesses)?-(?:for-sale|for-lease)/;
     const match = url.match(regex);
     return match ? match[1] : null;
   }

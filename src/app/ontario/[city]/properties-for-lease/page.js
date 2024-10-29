@@ -43,13 +43,13 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/ontario/${params.city}/homes-for-lease`,
+      canonical: `https://lowrise.ca/ontario/${params.city}/businesses-for-lease`,
     },
     openGraph: {
       images: "/favicon.ico",
     },
     title: [
-      `100+ ${formattedCity} Detached, Semi detached & Townhomes for lease`,
+      `100+ ${formattedCity} Restaurants, Land, Convenience Stores, Motels and Gas Stations for lease`,
       ,
       "New Listings",
       "Commercial Website",

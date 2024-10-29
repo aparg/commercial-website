@@ -69,7 +69,6 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
   const houseTypeOptions = Object.values(houseType)
     .filter((item) => item.value)
     .map((item) => item.name);
-  console.log(houseTypeOptions);
   //options for washroom counts
   const washroomCountOptions = Object.values(washroomCount).map(
     (item) => item.name
@@ -299,13 +298,6 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
           />
         </div>
       ) : null} */}
-      {console.log(
-        Object.keys(allPriceRanges).find(
-          (opt) =>
-            allPriceRanges[opt].min == filterState?.priceRange?.min &&
-            allPriceRanges[opt].max == filterState?.priceRange?.max
-        )
-      )}
       <div className="flex justify-center sm:justify-start">
         <IndividualFilterButtonNoLink
           options={
@@ -362,8 +354,6 @@ const IndividualFilter = ({
 
   return (
     <Dropdown>
-      {console.log(getSelectedValue(selectedKeys))}
-
       <DropdownTrigger disableAnimation={true}>
         <Button
           variant="faded"
@@ -390,13 +380,6 @@ const IndividualFilter = ({
       >
         {options.map((option) => {
           if (name == "type") {
-            console.log(
-              generateURL({
-                cityVal: city,
-                houseTypeVal: option,
-                saleLeaseVal: saleLease,
-              })
-            );
             return (
               <DropdownItem
                 key={option}
@@ -849,7 +832,6 @@ const IndividualFilterButtonNoLink = ({
 
   return (
     <div className="inline-flex sm:justify-normal justify-center sm:mr-4 flex-wrap gap-y-2 py-2 sm:py-0">
-      {console.log(activeFilter)}
       {options.map((option, index) => {
         return (
           <div

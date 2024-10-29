@@ -8,7 +8,7 @@ const page = () => {
 export async function generateMetadata() {
   return {
     title: "All properties for sale in Canada | Commercial Website",
-    description: "50000+ homes in Canada",
+    description: "50000+ businesses in Canada",
   };
 }
 

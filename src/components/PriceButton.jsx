@@ -21,8 +21,6 @@ const PriceButton = ({ price }) => {
       // Calculate final scroll position with offset
       const scrollPosition = absoluteElementPosition - offsetY;
 
-      console.log("Scrolling to:", scrollPosition);
-
       window.scrollTo({
         top: scrollPosition,
         behavior: "smooth",
@@ -37,7 +35,6 @@ const PriceButton = ({ price }) => {
     //   onClick={handleClick}
     // >
     //   {/* <div className="text-primary-green font-bold text-md bg-white rounded-t-xl w-full py-1 shadow-xl">
-    //     {console.log(price)}
     //     Listing Price: {price}
     //   </div> */}
     // </Link>

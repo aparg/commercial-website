@@ -26,7 +26,7 @@ const SiteLinks = ({ type }) => {
                     })}
                     className="hover:text-primary-green"
                   >
-                    {value} Homes in {city} for {type}
+                    {value} businesses in {city} for {type}
                   </Link>
                 </li>
               );

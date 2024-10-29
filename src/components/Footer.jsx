@@ -7,6 +7,8 @@ import { generateURL } from "@/helpers/generateURL";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
 import NewsletterSignup from "./NewsletterSignup";
+import { houseType } from "@/constant";
+import { capitalizeFirstLetter } from "@/helpers/capitalizeFIrstLetter";
 
 const Footer = ({ cities }) => {
   const pathname = usePathname();
@@ -30,16 +32,24 @@ const Footer = ({ cities }) => {
                 Explore Businesses For Sale In Canada
               </h3>
               <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 text-sm">
-                {allCities.map((val, idx) => (
-                  <li key={idx} className="text-center">
-                    <Link
-                      href={generateURL({ cityVal: val.city })}
-                      className="hover:text-primary-green transition-colors"
-                    >
-                      Properties for sale in {val.city}
-                    </Link>
-                  </li>
-                ))}
+                {allCities.map((val, idx1) =>
+                  Object.keys(houseType)
+                    .filter((val) => val !== "all")
+                    .map((type, idx2) => (
+                      <li key={`${idx1}${idx2}`} className="text-center">
+                        <Link
+                          href={generateURL({
+                            cityVal: val.city,
+                            houseTypeVal: houseType[type].name,
+                          })}
+                          className="hover:text-primary-green transition-colors"
+                        >
+                          {capitalizeFirstLetter(houseType[type].name)} for sale
+                          in {val.city}
+                        </Link>
+                      </li>
+                    ))
+                )}
               </ul>
             </div>
 

@@ -20,7 +20,6 @@ const Map = ({ main_data }) => {
     const fullAddressForMap = encodeURIComponent(
       `${StreetName} ${StreetAbbreviation}, ${Area}, ${Province}, Canada`
     );
-    // console.log(fullAddressForMap);
     // const url = latLong;
     const url = `https://api.mapbox.com/search/geocode/v6/forward?country=canada&place=${fullAddressForMap}&access_token=${ACCESS_TOKEN}`;
     // const options = {
@@ -35,7 +34,6 @@ const Map = ({ main_data }) => {
     //   }),
     // };
     // const res = await fetch(url, options);
-    // console.log(url);
     const res = await fetch(url);
     const data = await res.json();
     return data;
@@ -70,7 +68,6 @@ const Map = ({ main_data }) => {
 
   return (
     <>
-      {/* {console.log(state)} */}
       {state.lat && isMounted ? (
         <MapContainer
           center={[state.lat, state.lon]}

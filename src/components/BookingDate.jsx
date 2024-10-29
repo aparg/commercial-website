@@ -108,9 +108,7 @@ const BookingDate = ({ bannerImage }) => {
     }));
   };
 
-  const submitData = () => {
-    /* console.log(timing); */
-  };
+  const submitData = () => {};
 
   return (
     <div className="relative z-0 w-full rounded-md bg-very-light-gray flex items-center mt-12 sm:mt-24">

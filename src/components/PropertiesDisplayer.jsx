@@ -23,7 +23,7 @@ const PropertiesDisplayer = ({
               <h2 className={`tracking-tighter text-${textColor}`}>
                 <span className="font-sans text-4xl font-normal sm:text-5xl md:text-6xl">
                   {" "}
-                  Homes with
+                  Businesses with
                 </span>
                 <span className="font-serif text-5xl italic sm:text-6xl md:text-7xl">
                   {" "}

@@ -5,6 +5,5 @@ export const searchProperties = async (inputValue) => {
     commercial.properties.replace("$query", "?$search=") + inputValue
   );
   const searchedProperties = await response.json();
-  /* console.log(searchedProperties); */
   return searchedProperties.results;
 };

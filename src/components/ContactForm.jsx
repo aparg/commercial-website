@@ -15,7 +15,7 @@ const ContactForm = () => {
         Have any Questions ?
       </h1>
       <p className="text-xl text-center mb-8">
-        Speak to our Homes expert today
+        Speak to our Businesses expert today
       </p>
 
       <form className="space-y-4">
@@ -57,8 +57,8 @@ const ContactForm = () => {
         />
 
         <p className="text-xs text-gray-500 text-center">
-          Commercial Website is an online resale homes database for properties
-          in Canada. Commercial Website curates the list of homes that are
+          Commercial Website is an online businesses database for properties in
+          Canada. Commercial Website curates the list of businesses that are
           publicly available on the internet and does not take part in any real
           estate transactions. Be advised the information provided on this page
           could be outdated or inaccurate. By submitting the above form, you

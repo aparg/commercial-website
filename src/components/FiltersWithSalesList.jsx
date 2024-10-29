@@ -135,7 +135,6 @@ const FiltersWithSalesList = ({
       ...payload,
     };
     setLoading(true);
-    // console.log(payload);
     const filteredSalesData = await getFilteredRetsData(queryParams);
     setSalesData(filteredSalesData);
     if (!filteredSalesData?.length == 0) {
@@ -145,7 +144,6 @@ const FiltersWithSalesList = ({
   };
 
   useEffect(() => {
-    console.log(filterState);
     // store data in session storage whenever it changes
     if (isLocalStorageAvailable() && filterState) {
       window.localStorage.setItem("filterState", JSON.stringify(filterState));
@@ -179,9 +177,9 @@ const FiltersWithSalesList = ({
 
   const formattedCityName = capitalizeFirstLetter(decodeURIComponent(city));
   const homeText = !requiredType
-    ? "Homes"
+    ? "Businesses"
     : !requiredType?.toLowerCase().includes("house")
-    ? "Homes"
+    ? "Businesses"
     : "";
 
   return (
@@ -193,16 +191,6 @@ const FiltersWithSalesList = ({
               isMobileView ? "pt-2" : "pt-2"
             }`}
           >
-            {/* {`${
-              requiredType ? requiredType : city ? formattedCityName : "Ontario"
-            }
-            Homes ${filterState.saleLease} ${
-              requiredType ? "in " + formattedCityName : ""
-            } ${
-              filterState.priceRange.max
-                ? ` under ${formatCurrency(filterState.priceRange.max)}`
-                : ""
-            } | Real Estate Updated Daily Listings`} */}
             100+{" "}
             {[
               capitalizeFirstLetter(requiredType),
@@ -218,10 +206,10 @@ const FiltersWithSalesList = ({
             style={isMobileView ? { fontSize: "0.9rem" } : {}}
           >
             500+ {capitalizeFirstLetter(city)}{" "}
-            {capitalizeFirstLetter(requiredType) || ""} homes for{" "}
-            {saleLeaseVal || "sale"}. Book a showing for affordable homes with
-            pools, finished basements, walkouts. Prices from $1 to $5,000,000.
-            Open houses available.
+            {capitalizeFirstLetter(requiredType) || ""} businesses for{" "}
+            {saleLeaseVal || "sale"}. Book a showing for affordable businesses
+            with pools, finished basements, walkouts. Prices from $1 to
+            $5,000,000. Open houses available.
           </h2>
 
           <div

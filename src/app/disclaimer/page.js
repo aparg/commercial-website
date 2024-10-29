@@ -7,7 +7,7 @@ const page = () => {
       <div className="max-w-3xl mx-auto bg-white shadow-[0_0_50px_#EE426680] shadow-xl rounded-lg overflow-hidden">
         <div className="p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            Understanding Average Price Calculations for Resale Homes
+            Understanding Average Price Calculations for Businesses
           </h2>
           <ol className="list-decimal list-outside ml-6 space-y-6 marker:font-bold">
             <li>
@@ -16,11 +16,12 @@ const page = () => {
               </h3>
               <p className="text-gray-600">
                 The average prices on Commercial Website are calculated using
-                sales data of properties within specific categories (Townhomes,
-                Detached homes, Triplexes, and Duplexes) over a defined period.
-                We take the total sum of sale prices and divide it by the number
-                of properties to arrive at an average price, giving a general
-                indication of market trends within each category.
+                sales data of properties within specific categories
+                (Restaurants, Land, Convenience Stores, Motels and Gas Stations)
+                over a defined period. We take the total sum of sale prices and
+                divide it by the number of properties to arrive at an average
+                price, giving a general indication of market trends within each
+                category.
               </p>
             </li>
             <li>

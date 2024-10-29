@@ -16,8 +16,8 @@ import { houseType } from "@/constant";
 export const metadata = {
   title: "Commercial Website | Businesses in Ontario",
   description:
-    "Commercial Website is Canada's Top Destination for Businesses such as Townhomes, Detached & Semi Detached homes. The home listings are updated every minutes. Check out 100s of properties listed in Canada.",
-  keywords: "resale, properties, Ontario, Canada, low-rise, homes",
+    "Commercial Website is Canada's Top Destination for Businesses such as Restaurants, Land, Convenience Stores, Motels and Gas Stations. The home listings are updated every minutes. Check out 100s of properties listed in Canada.",
+  keywords: "resale, properties, Ontario, Canada, low-rise, businesses",
 };
 
 export default async function Home() {

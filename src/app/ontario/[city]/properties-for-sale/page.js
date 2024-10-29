@@ -43,13 +43,13 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/ontario/${params.city}/homes-for-sale`,
+      canonical: `https://lowrise.ca/ontario/${params.city}/businesses-for-sale`,
     },
     openGraph: {
       images: "/favicon.ico",
     },
     title: [
-      `100+ ${formattedCity} Detached, Semi detached & Townhomes for sale`,
+      `100+ ${formattedCity} Restaurants, Land, Convenience Stores, Motels and Gas Stations for sale`,
       ,
       "New Listings",
       "Commercial Website",

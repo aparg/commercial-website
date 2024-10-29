@@ -814,13 +814,13 @@ const PropertyPage = ({ main_data }) => {
           </div>
         )}
       </div>
-      <div className={isMobileView ? `mt-12 col-12` : `mt-24 col-12`}>
+      {/* <div className={isMobileView ? `mt-12 col-12` : `mt-24 col-12`}>
         <CompactMortgageCalculator
           price={main_data?.ListPrice}
           showDetails={false}
           align="left"
         />
-      </div>
+      </div> */}
       <div className={isMobileView ? `mt-14 col-12` : `mt-24 col-12`}>
         <h2 className="font-bold pb-3 text-lg sm:text-2xl pt-3">
           <Image

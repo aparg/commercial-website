@@ -7,8 +7,8 @@ const page = () => {
 
 export async function generateMetadata() {
   return {
-    title: "All homes for lease in Canada | Commercial Website",
-    description: "50000+ homes in Canada",
+    title: "All businesses for lease in Canada | Commercial Website",
+    description: "50000+ businesses in Canada",
   };
 }
 
