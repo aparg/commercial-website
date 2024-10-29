@@ -55,11 +55,9 @@ const SpecificListings = ({ topic, data }) => {
                 {item.data.map((value) => (
                   <div
                     key={value.MLS}
-                    className="transform hover:scale-102 hover:-translate-y-1 transition-all duration-300"
+                    className="transform hover:scale-102 hover:-translate-y-1 duration-300"
                   >
-                    <div className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <ResaleCard curElem={value} />
-                    </div>
+                    <ResaleCard curElem={value} />
                   </div>
                 ))}
               </div>
