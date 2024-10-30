@@ -207,8 +207,8 @@ const FiltersWithSalesList = ({
           >
             500+ {capitalizeFirstLetter(city)}{" "}
             {capitalizeFirstLetter(requiredType) || ""} businesses for{" "}
-            {saleLeaseVal || "sale"}. Book a showing for affordable businesses
-            with pools, finished basements, walkouts. Prices from $1 to
+            {saleLeaseVal || "sale"}. Book a showing for gas stations,
+            restaurants, motels, convenience stores and lands. Prices from $1 to
             $5,000,000. Open houses available.
           </h2>
 

@@ -62,7 +62,7 @@ export async function generateMetadata({ params }, parent) {
       images: "/favicon.ico",
     },
     title: `100+ Ontario properties for Sale | New Listings | Commercial Website `,
-    description: `500+ Ontario ${type} for sale. Book a showing for affordable businesses with pools, finished basements, walkouts. Prices from $1 to $5,000,000. Open houses available.`,
+    description: `500+ Ontario ${type} for sale. Book a showing for gas stations, restaurants, motels, convenience stores and lands. Open houses available.`,
   };
 }
 

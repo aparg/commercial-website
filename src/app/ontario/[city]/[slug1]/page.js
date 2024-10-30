@@ -60,7 +60,7 @@ export async function generateMetadata({ params }, parent) {
     title: `100+ ${formattedCity} ${capitalizeFirstLetter(
       type
     )} properties for Sale | New Listings | Commercial Website `,
-    description: `500+ ${formattedCity} ${type} properties for sale. Book a showing for affordable businesses with pools, finished basements, walkouts. Prices from $1 to $5,000,000. Open houses available.`,
+    description: `500+ ${formattedCity} ${type} properties for sale. Book a showing for gas stations, restaurants, motels, convenience stores and lands. Open houses available.`,
   };
 }
 
