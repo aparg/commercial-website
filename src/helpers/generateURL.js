@@ -17,7 +17,7 @@ export const generateURL = ({
   const city = cityVal?.toLowerCase().replaceAll(" ", "-");
   let houseType =
     houseTypeVal?.toLowerCase() || filterState?.type?.toLowerCase() || null;
-  if (houseType == "house type") {
+  if (houseType == "business type") {
     houseType = null; //edge case for housetype object where housetype option represents nothing
   }
   const saleLeaseType =

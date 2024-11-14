@@ -62,7 +62,7 @@ const Navbar = (props) => {
   const cities = citiesWithProvinces.map((obj) => {
     return { name: obj.city, link: generateURL({ cityVal: obj.city }) };
   });
-
+  // console.log(generateURL({ cityVal: "Markham" }));
   function extractCityname(url) {
     const regex =
       /\/ontario\/([^/]+)\/(?:gas-station|convenience-stores|motel|restaurant|land|businesses)?-(?:for-sale|for-lease)/;
