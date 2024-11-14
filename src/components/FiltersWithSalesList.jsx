@@ -17,6 +17,7 @@ import HotListings from "./HotListings";
 import PageSelector from "./PageSelector";
 import Image from "next/image";
 import formatCurrency from "@/helpers/formatCurrency";
+import { plural } from "@/constant/plural";
 // import FilterSubmit from "../FilterSubmit";
 
 const FiltersWithSalesList = ({
@@ -193,8 +194,10 @@ const FiltersWithSalesList = ({
           >
             100+{" "}
             {[
-              capitalizeFirstLetter(requiredType),
-              homeText,
+              capitalizeFirstLetter(
+                requiredType + (plural[requiredType] || "")
+              ),
+
               "for " + capitalizeFirstLetter(saleLeaseVal),
               ,
             ].join(" ") + " "}{" "}

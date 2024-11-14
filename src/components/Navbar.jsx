@@ -77,18 +77,6 @@ const Navbar = (props) => {
       : " in Ontario"
     : "";
   const buyOpts = [
-    /* {
-      name: "Semi-detached for Sale",
-      link: generateURL({ houseTypeVal: "semiDetached" }),
-    }, */
-    {
-      name: "Gas Station for Sale" + inCity,
-      link: generateURL({
-        houseTypeVal: "semi detached",
-        saleLeaseVal: "sale",
-        cityVal: cityName,
-      }),
-    },
     {
       name: "Convenience Store for Sale" + inCity,
       link: generateURL({
