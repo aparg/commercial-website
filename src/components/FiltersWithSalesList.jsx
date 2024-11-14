@@ -198,8 +198,7 @@ const FiltersWithSalesList = ({
               "for " + capitalizeFirstLetter(saleLeaseVal),
               ,
             ].join(" ") + " "}{" "}
-            {city ? ` | ${capitalizeFirstLetter(city)}` : ""} | Commercial
-            Website
+            {city ? ` | ${capitalizeFirstLetter(city)}` : ""} | Commercialspot
           </h1>
           <h2
             className="text-sm mb-5 mt-1 text-center sm:text-left"
