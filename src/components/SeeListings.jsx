@@ -7,7 +7,7 @@ const SeeListings = () => {
     <div className="w-full bg-gray-100 py-20 flex flex-col items-center mb-[20rem]">
       <div className="max-w-[90%]">
         <h2 className="uppercase text-sm sm:text-md text-center text-gray-600">
-          Commercial Website real estate listings
+          Commercialspot.ca real estate listings
         </h2>
         <h1 className="text-2xl sm:text-4xl font-bold text-center">
           See listings available with us
@@ -54,7 +54,7 @@ const SeeListings = () => {
           </div>
           <div className="">
             <h2 className="font-bold text-xl mb-2 text-center">
-              Types of houses available
+              Types of businesses available
             </h2>
             <ul className="flex-col justify-center text-center">
               <li>

@@ -69,7 +69,7 @@ const BlogDetails = async ({ params }) => {
                 <div className="flex flex-col sm:flex-row justify-between">
                   <div>
                     <div className="font-bold">
-                      The Commercial Website Content Team
+                      The Commercialspot.ca Content Team
                     </div>
                     <div className="text-gray-500">
                       Posted{" "}

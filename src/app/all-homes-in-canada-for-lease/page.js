@@ -7,7 +7,7 @@ const page = () => {
 
 export async function generateMetadata() {
   return {
-    title: "All businesses for lease in Canada | Commercial Website",
+    title: "All businesses for lease in Canada | Commercialspot.ca",
     description: "50000+ businesses in Canada",
   };
 }

@@ -14,9 +14,9 @@ import SpecificListings from "@/components/SpecificListings";
 import { houseType } from "@/constant";
 
 export const metadata = {
-  title: "Commercial Website | Businesses in Ontario",
+  title: "Commercialspot.ca | Businesses in Ontario",
   description:
-    "Commercial Website is Canada's Top Destination for Businesses such as Restaurants, Land, Convenience Stores, Motels and Gas Stations. The home listings are updated every minutes. Check out 100s of properties listed in Canada.",
+    "Commercialspot.ca is Canada's Top Destination for Businesses such as Restaurants, Land, Convenience Stores, Motels and Gas Stations. The home listings are updated every minutes. Check out 100s of properties listed in Canada.",
   keywords: "resale, properties, Ontario, Canada, low-rise, businesses",
 };
 
@@ -167,7 +167,7 @@ export default async function Home() {
           <Slider data={OAKVILLEHOMES} type="resale" />
         </PropertyDisplaySection>
         <PropertyDisplaySection
-          title="The Commercial Website Insights"
+          title="The Commercialspot.ca Insights"
           subtitle=""
           exploreAllLink="/blogs"
         >

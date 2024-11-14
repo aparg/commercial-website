@@ -15,7 +15,7 @@ const page = () => {
                 How We Calculate the Average Price
               </h3>
               <p className="text-gray-600">
-                The average prices on Commercial Website are calculated using
+                The average prices on Commercialspot.ca are calculated using
                 sales data of properties within specific categories
                 (Restaurants, Land, Convenience Stores, Motels and Gas Stations)
                 over a defined period. We take the total sum of sale prices and
@@ -68,8 +68,8 @@ const page = () => {
                 sometimes be incomplete, outdated, or inaccurate. We strongly
                 recommend users conduct their own research and consult with real
                 estate professionals before making decisions based on
-                information from Commercial Website. Our data should be used as
-                a general guide rather than the sole basis for financial or real
+                information from Commercialspot.ca. Our data should be used as a
+                general guide rather than the sole basis for financial or real
                 estate transactions.
               </p>
             </li>

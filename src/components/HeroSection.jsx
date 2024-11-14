@@ -32,7 +32,7 @@ const HeroSection = () => {
               <div className="flex flex-col items-center justify-start mb-5">
                 <img
                   src="/logo-commercial.png"
-                  alt="Commercial Website Logo"
+                  alt="Commercialspot.ca Logo"
                   width={200}
                   height={200}
                 />

@@ -6,7 +6,7 @@ import Head from "next/head";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata = {
-  title: "Commercial Website",
+  title: "Commercialspot.ca",
   description: "",
   icons: {
     icon: "/favicon.svg",

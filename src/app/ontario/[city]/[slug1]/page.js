@@ -59,7 +59,7 @@ export async function generateMetadata({ params }, parent) {
     },
     title: `100+ ${formattedCity} ${capitalizeFirstLetter(
       type
-    )} properties for Sale | New Listings | Commercial Website `,
+    )} properties for Sale | New Listings | Commercialspot.ca `,
     description: `500+ ${formattedCity} ${type} properties for sale. Book a showing for gas stations, restaurants, motels, convenience stores and lands. Open houses available.`,
   };
 }

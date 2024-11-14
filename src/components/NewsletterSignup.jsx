@@ -9,9 +9,8 @@ const NewsletterSignup = () => {
             Businesses for sale in Canada updated hourly
           </h2>
           <p className="text-base font-normal leading-7 text-gray-700 lg:text-lg max-w-2xl mx-auto">
-            Subscribe to our free weekly newsletter for the latest
-            pre-construction projects, market insights, and exclusive offers
-            across Canada.
+            Subscribe to our free weekly newsletter for the latest business
+            listings, market insights, and exclusive offers across Canada.
           </p>
         </div>
 

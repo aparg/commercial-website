@@ -52,9 +52,9 @@ export async function generateMetadata({ params }, parent) {
       `100+ ${formattedCity} Restaurants, Land, Convenience Stores, Motels and Gas Stations for lease`,
       ,
       "New Listings",
-      "Commercial Website",
+      "Commercialspot.ca",
     ].join(" | "),
-    description: `Find houses for sale in ${formattedCity}, ON. Visit Commercial Website to see all the ${params.city}, ON real estate listings on the MLS® Systems today! Prices starting at $1 💰`,
+    description: `Find houses for sale in ${formattedCity}, ON. Visit Commercialspot.ca to see all the ${params.city}, ON real estate listings on the MLS® Systems today! Prices starting at $1 💰`,
   };
 }
 

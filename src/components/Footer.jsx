@@ -9,6 +9,7 @@ import Image from "next/image";
 import NewsletterSignup from "./NewsletterSignup";
 import { houseType } from "@/constant";
 import { capitalizeFirstLetter } from "@/helpers/capitalizeFIrstLetter";
+import CommercialSpotLogo from "./CommercialSpotLogo";
 
 const Footer = ({ cities }) => {
   const pathname = usePathname();
@@ -59,19 +60,20 @@ const Footer = ({ cities }) => {
                 <div className="flex justify-center">
                   <Link href="/">
                     <div className="flex justify-center mb-5">
-                      <Image
+                      {/* <Image
                         src="/logo-commercial.png"
-                        alt="Commercial Website Logo"
+                        alt="Commercialspot.ca Logo"
                         width={200}
                         height={200}
-                      />
+                      /> */}
+                      <CommercialSpotLogo />
                     </div>
                   </Link>
                 </div>
                 <p className="text-sm leading-relaxed mb-8">
-                  Commercial Website (“Commercial Website”) is a real estate
+                  Commercialspot.ca (“Commercialspot.ca”) is a real estate
                   marketplace platform -owned by Homebaba technologies Inc.
-                  Commercial Website refers potential buyers to real estate
+                  Commercialspot.ca refers potential buyers to real estate
                   agents that are licensed in the province where the respective
                   property is located. Dolphin Realty is licensed as a real
                   estate brokerage in Ontario.
@@ -173,7 +175,7 @@ const Footer = ({ cities }) => {
               </div>
             </div>
             <p className="text-sm text-center mt-10">
-              ©{year_now} Copyright Commercial Website All Rights Reserved
+              ©{year_now} Copyright Commercialspot.ca All Rights Reserved
             </p>
           </div>
         </div>

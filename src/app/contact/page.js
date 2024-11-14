@@ -1,7 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact Us | Commercial Website",
+  title: "Contact Us | Commercialspot.ca",
   description:
     "Get in touch with our real estate experts for help with Ontario properties.",
   keywords: "contact, real estate agents, Ontario property help",

@@ -61,7 +61,7 @@ export async function generateMetadata({ params }, parent) {
     openGraph: {
       images: "/favicon.ico",
     },
-    title: `100+ Ontario properties for Sale | New Listings | Commercial Website `,
+    title: `100+ Ontario properties for Sale | New Listings | Commercialspot.ca `,
     description: `500+ Ontario ${type} for sale. Book a showing for gas stations, restaurants, motels, convenience stores and lands. Open houses available.`,
   };
 }

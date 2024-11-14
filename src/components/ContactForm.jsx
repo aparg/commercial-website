@@ -57,8 +57,8 @@ const ContactForm = () => {
         />
 
         <p className="text-xs text-gray-500 text-center">
-          Commercial Website is an online businesses database for properties in
-          Canada. Commercial Website curates the list of businesses that are
+          Commercialspot.ca is an online businesses database for properties in
+          Canada. Commercialspot.ca curates the list of businesses that are
           publicly available on the internet and does not take part in any real
           estate transactions. Be advised the information provided on this page
           could be outdated or inaccurate. By submitting the above form, you

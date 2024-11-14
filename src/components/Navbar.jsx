@@ -10,6 +10,7 @@ import Image from "next/image";
 import citiesWithProvinces from "@/constant/cities";
 import { useRouter } from "next/navigation";
 import { capitalizeFirstLetter } from "@/helpers/capitalizeFIrstLetter";
+import CommercialSpotLogo from "./CommercialSpotLogo";
 
 const Navbar = (props) => {
   const [isSticky, setIsSticky] = useState(true);
@@ -55,8 +56,8 @@ const Navbar = (props) => {
     return;
   });
 
-  const whiteLogoPath = "/logo-commercial.png";
-  const blackLogoPath = "/logo-commercial.png";
+  // const whiteLogoPath = "/logo-commercial.png";
+  // const blackLogoPath = "/logo-commercial.png";
 
   const cities = citiesWithProvinces.map((obj) => {
     return { name: obj.city, link: generateURL({ cityVal: obj.city }) };
@@ -71,7 +72,7 @@ const Navbar = (props) => {
 
   const cityName = extractCityname(pathname);
   const inCity = cityName
-    ? cityName.toLowerCase() !== "homes"
+    ? cityName.toLowerCase() !== "businesses"
       ? ` in ${decodeURIComponent(capitalizeFirstLetter(cityName))}`
       : " in Ontario"
     : "";
@@ -194,13 +195,14 @@ const Navbar = (props) => {
         >
           <div className="flex-shrink-0 flex h-full items-center mr-2">
             <Link href="/" className="logo d-flex items-center">
-              <Image
+              {/* <Image
                 src={isSticky ? blackLogoPath : whiteLogoPath}
                 alt="logo"
                 width={100}
                 height={5}
                 className="w-20 sm:w-30"
-              />
+              /> */}
+              <CommercialSpotLogo />
             </Link>
           </div>
 
@@ -361,9 +363,7 @@ const Navbar = (props) => {
               <img src="/contact.png" className="w-12"></img>
               <div className="flex flex-col items-center justify-center">
                 <div className="text-lg font-bold">249-201-6665</div>
-                <div className="text-xs">
-                  Speak with Commercial Website Team
-                </div>
+                <div className="text-xs">Speak with our team</div>
               </div>
             </Link>
           </div>
@@ -442,9 +442,7 @@ const Navbar = (props) => {
                   <img src="/contact.png" className="w-12"></img>
                   <div className="flex flex-col items-center justify-center">
                     <div className="text-lg font-bold">(416) 845-8996</div>
-                    <div className="text-xs">
-                      Speak with Commercial Website team
-                    </div>
+                    <div className="text-xs">Speak with our team</div>
                   </div>
                 </Link>
               </Link>

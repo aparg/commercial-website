@@ -16,7 +16,7 @@ const FiltersWithSalesList = dynamic(
 );
 
 export const metadata = {
-  title: "Ontario Properties | Commercial Website",
+  title: "Ontario Properties | Commercialspot.ca",
   description:
     "Explore resale properties across Ontario. Find your next home or investment opportunity.",
   keywords: "Ontario real estate, resale properties, low-rise buildings",
@@ -25,7 +25,7 @@ export const metadata = {
 const page = async ({ params }) => {
   const INITIAL_LIMIT = 30;
   const breadcrumbItems = [
-    { label: "Commercial Website", href: "/" },
+    { label: "Commercialspot.ca", href: "/" },
     { label: "ON", href: null },
   ];
   return (
