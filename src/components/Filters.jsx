@@ -108,6 +108,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
       };
     }
     scrollToFilters();
+    console.log(newFilterState);
     setFilterState({ ...newFilterState });
     fetchFilteredData(newFilterState);
   };

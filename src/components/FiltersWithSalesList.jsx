@@ -192,12 +192,11 @@ const FiltersWithSalesList = ({
               isMobileView ? "pt-2" : "pt-2"
             }`}
           >
-            100+{" "}
+            100+&nbsp;
             {[
-              capitalizeFirstLetter(
-                requiredType + (plural[requiredType] || "")
-              ),
-
+              (requiredType &&
+                capitalizeFirstLetter(requiredType + plural[requiredType])) ||
+                homeText,
               "for " + capitalizeFirstLetter(saleLeaseVal),
               ,
             ].join(" ") + " "}{" "}
