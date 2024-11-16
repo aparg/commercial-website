@@ -53,8 +53,12 @@ const FiltersWithSalesList = ({
     : null;
   //if parameters are passed for house type or sale/lease rewrite property values for storedState
   if (storedState) {
+    console.log(storedState);
     if (saleLeaseFilterVal) storedState.type = houseTypeFilterVal;
     if (saleLeaseFilterVal) storedState.saleLease = saleLeaseFilterVal;
+    console.log(saleLeaseFilterVal, storedState.saleLease);
+    if (saleLeaseFilterVal != storedState.saleLease)
+      storedState.priceRange = {};
   }
   const [filterState, setFilterState] = useState(
     { ...storedState, city: city } || initialState
@@ -148,7 +152,14 @@ const FiltersWithSalesList = ({
 
   useEffect(() => {
     // store data in session storage whenever it changes
+    const storedState =
+      isLocalStorageAvailable &&
+      JSON.parse(window.localStorage.getItem("filterState"));
     if (isLocalStorageAvailable() && filterState) {
+      console.log(filterState.saleLease, storedState.saleLease);
+      if (filterState.saleLease != storedState.saleLease) {
+        filterState.priceRange = {};
+      }
       window.localStorage.setItem("filterState", JSON.stringify(filterState));
       window.localStorage.setItem("selectedCity", capitalizeFirstLetter(city));
     }

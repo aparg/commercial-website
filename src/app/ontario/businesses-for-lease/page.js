@@ -19,9 +19,7 @@ const FiltersWithSalesList = dynamic(
 
 const INITIAL_LIMIT = 30;
 const page = async ({ params }) => {
-  const city = params.city.split("-").join(" ");
-  const formattedSlug = encodeURIComponent(capitalizeFirstLetter(city));
-  const salesListData = await getSalesData(0, INITIAL_LIMIT, formattedSlug);
+  const salesListData = await getSalesData(0, INITIAL_LIMIT);
   const saleLeaseVal = "lease";
   return (
     <>
@@ -29,7 +27,7 @@ const page = async ({ params }) => {
         <div className="">
           <div className="">
             <FiltersWithSalesList
-              {...{ salesListData, INITIAL_LIMIT, city, saleLeaseVal }}
+              {...{ salesListData, INITIAL_LIMIT, saleLeaseVal }}
             />
           </div>
         </div>
@@ -39,22 +37,21 @@ const page = async ({ params }) => {
 };
 
 export async function generateMetadata({ params }, parent) {
-  const formattedCity = capitalizeFirstLetter(params.city.replace("-", " "));
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/ontario/${params.city}/businesses-for-lease`,
+      canonical: `https://lowrise.ca/ontario/businesses-for-lease`,
     },
     openGraph: {
       images: "/favicon.ico",
     },
     title: [
-      `100+ ${formattedCity} Restaurants, Land, Convenience Stores, Motels and Gas Stations for lease`,
+      `100+ Ontario Restaurants, Land, Convenience Stores, Motels and Gas Stations for lease`,
       ,
       "New Listings",
       "Commercialspot.ca",
     ].join(" | "),
-    description: `Find houses for sale in ${formattedCity}, ON. Visit Commercialspot.ca to see all the ${params.city}, ON real estate listings on the MLS® Systems today! Prices starting at $1 💰`,
+    description: `Find houses for sale in ON. Visit Commercialspot.ca to see all the ON real estate listings on the MLS® Systems today! Prices starting at $1 💰`,
   };
 }
 

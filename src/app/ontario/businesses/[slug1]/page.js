@@ -30,7 +30,7 @@ const page = async ({ params }) => {
         <FiltersWithSalesList
           {...{
             INITIAL_LIMIT,
-            saleLeaseVal: saleLeaseValue,
+            saleLeaseVal: saleLeaseValue || Object.keys(saleLease)[0],
             requiredType: type,
             filter: type || "",
           }}

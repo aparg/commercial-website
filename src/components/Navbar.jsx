@@ -60,7 +60,10 @@ const Navbar = (props) => {
   // const blackLogoPath = "/logo-commercial.png";
 
   const cities = citiesWithProvinces.map((obj) => {
-    return { name: obj.city, link: generateURL({ cityVal: obj.city }) };
+    return {
+      name: obj.city,
+      link: generateURL({ cityVal: obj.city, saleLeaseVal: "sale" }),
+    };
   });
   // console.log(generateURL({ cityVal: "Markham" }));
   function extractCityname(url) {
