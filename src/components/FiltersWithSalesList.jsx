@@ -56,7 +56,9 @@ const FiltersWithSalesList = ({
     if (saleLeaseFilterVal) storedState.type = houseTypeFilterVal;
     if (saleLeaseFilterVal) storedState.saleLease = saleLeaseFilterVal;
   }
-  const [filterState, setFilterState] = useState(storedState || initialState);
+  const [filterState, setFilterState] = useState(
+    { ...storedState, city: city } || initialState
+  );
   const [salesData, setSalesData] = useState(salesListData);
   const [offset, setOffset] = useState(0);
   const { isMobileView } = useDeviceView();

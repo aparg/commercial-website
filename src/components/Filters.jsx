@@ -176,7 +176,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
     filterState.saleLease == saleLease.sale.name
       ? priceRangesSaleProperties
       : priceRangesLeaseProperties;
-
+  console.log(filterState);
   return (
     <>
       <div
@@ -187,6 +187,17 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
         }`}
         id="filters"
       >
+        <IndividualButtonWithLink
+          link={generateURL({
+            saleLeaseVal: filterState.saleLease,
+            houseTypeVal: filterState.type,
+          })}
+          label="Ontario"
+          name="city"
+          value=""
+          handleFilterChange={handleFilterChange}
+          isActive={!filterState.city}
+        />
         <IndividualFilterButton
           options={saleLeaseOptions}
           name="saleLease"
@@ -324,6 +335,31 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
         />
       </div> */}
     </>
+  );
+};
+
+const IndividualButtonWithLink = ({
+  link,
+  label,
+  name,
+  value,
+  handleFilterChange,
+  isActive,
+}) => {
+  return (
+    <div className="inline-flex sm:mr-4 flex-wrap gap-y-2">
+      <div
+        className={`mx-[2px] px-1 sm:px-3 py-1 cursor-pointer text-nowrap text-xs sm:text-sm h-[28px] leading-[1.2rem] sm:leading-normal sm:h-[34px] flex justify-content-center align-items-center rounded-full hover:shadow-lg border-[2px] ${
+          isActive
+            ? `border-primary-green! text-white bg-primary-green`
+            : "border-gray-filter"
+        }`}
+        onClick={() => handleFilterChange(name, value)}
+        // style={{ border: "2px solid #e5e7eb" }}
+      >
+        <Link href={link}>{label}</Link>
+      </div>
+    </div>
   );
 };
 
