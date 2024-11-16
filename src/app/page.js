@@ -45,19 +45,19 @@ export default async function Home() {
   );
   const RESTAURANTS = await getFilteredRetsData({
     houseType: ["Restaurant"],
-    skip: 0,
+    offset: 0,
     limit: 3,
     range: undefined,
   });
   const MOTELS = await getFilteredRetsData({
     houseType: ["Convenience/Variety"],
-    skip: 0,
+    offset: 0,
     limit: 3,
     range: undefined,
   });
   const GASSTATIONS = await getFilteredRetsData({
     houseType: ["Gas Stations"],
-    skip: 0,
+    offset: 0,
     limit: 3,
     range: undefined,
   });
@@ -114,7 +114,7 @@ export default async function Home() {
       <MobilePromo></MobilePromo>
       <section className="mx-auto max-w-[90%]">
         <PropertyDisplaySection
-          title="Explore properties in Toronto"
+          title="Explore businesses in Toronto"
           subtitle={""}
           exploreAllLink={generateURL({ cityVal: "Toronto" })}
         >
@@ -129,7 +129,7 @@ export default async function Home() {
           data={HOUSEWITHFIREPLACES}
         /> */}
         <PropertyDisplaySection
-          title="Explore properties in Brampton"
+          title="Explore businesses in Brampton"
           subtitle=""
           exploreAllLink={generateURL({ cityVal: "Brampton" })}
         >
@@ -145,7 +145,7 @@ export default async function Home() {
           data={HOUSEWITHSEPARATEENTRANCE}
         /> */}
         <PropertyDisplaySection
-          title="Explore properties in Mississauga"
+          title="Explore businesses in Mississauga"
           subtitle=""
           exploreAllLink={generateURL({ cityVal: "Mississauga" })}
         >
@@ -160,7 +160,7 @@ export default async function Home() {
           topic="Hot Listings"
         />
         <PropertyDisplaySection
-          title="Explore properties in Oakville"
+          title="Explore businesses in Oakville"
           subtitle=""
           exploreAllLink={generateURL({ cityVal: "Oakville" })}
         >
