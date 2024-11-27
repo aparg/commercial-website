@@ -401,7 +401,8 @@ const IndividualFilter = ({
             `${bgColor[name]} ${textColor[name]} border-primary-green`
           }`}
         >
-          {getSelectedValue(selectedKeys)}
+          {console.log(getSelectedValue(selectedKeys))}
+          {getSelectedValue(selectedKeys) || "House Type"}
           {/* <i className="bi bi-chevron-down" style={{ fontSize: "0.7rem" }}></i> */}
           <span className="mt-1" color="#111111">
             <FaChevronDown size={10} />
