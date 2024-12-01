@@ -1,5 +1,11 @@
 "use client";
-import React, { useState, useCallback, useMemo, useEffect } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  useRef,
+} from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -231,7 +237,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
         </div> */}
 
         <div className="rounded-full overflow-hidden sm:mr-4 hover:shadow-lg">
-          <IndividualFilter
+          <CustomDropdown
             options={houseTypeOptions}
             defaultValue={
               Object.values(houseType).find((val) => val.value == null).name
@@ -240,8 +246,6 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
             value={filterState.type}
             setFilterState={setFilterState}
             handleFilterChange={handleFilterChange}
-            // isMulti={true}
-            isMulti={false}
             isMobileView={isMobileView}
             city={filterState.city}
             saleLease={filterState.saleLease}
@@ -363,81 +367,95 @@ const IndividualButtonWithLink = ({
   );
 };
 
-const IndividualFilter = ({
-  city,
+const CustomDropdown = ({
   options,
   name,
   value,
   handleFilterChange,
   isMobileView,
-  isMulti = false,
-  defaultValue,
+  city,
   saleLease,
-  unselectedValue = null,
+  defaultValue,
 }) => {
-  const [selectedKeys, setSelectedKeys] = useState(() =>
-    isMulti ? [...value] : [value]
-  );
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const handleKeyChange = (newKey) => {
-    setSelectedKeys(newKey);
-    handleFilterChange(name, getSelectedValue(newKey));
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelect = (option) => {
+    if (name === "type") {
+      const url = generateURL({
+        cityVal: city,
+        houseTypeVal: option,
+        saleLeaseVal: saleLease,
+      });
+      window.location.href = url;
+    }
+    handleFilterChange(name, option);
+    setIsOpen(false);
   };
 
-  const getSelectedValue = useCallback(
-    (key) => Array.from(key).join(", ").replaceAll("_", " "),
-    [selectedKeys]
-  );
-
   return (
-    <Dropdown>
-      <DropdownTrigger disableAnimation={true}>
-        <Button
-          variant="faded"
-          className={`capitalize text-xs sm:text-sm h-[28px] sm:h-[34px] bg-white rounded-full ${
-            isMobileView && "px-1 gap-1 min-w-unit-0 min-w-10"
-          } ${
-            getSelectedValue(selectedKeys) !== defaultValue &&
-            `${bgColor[name]} ${textColor[name]} border-primary-green`
+    <div className="relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`
+          flex items-center justify-between
+          capitalize text-xs sm:text-sm h-[28px] sm:h-[34px]
+          px-3 rounded-full transition-colors
+          ${isMobileView ? "px-1 gap-1 min-w-unit-0 min-w-10" : ""}
+          ${
+            value && value !== defaultValue
+              ? `bg-primary-green text-white border-primary-green`
+              : `bg-white border-[2px] border-gray-filter hover:bg-gray-50`
+          }
+        `}
+      >
+        <span>{value || "House Type"}</span>
+        <span
+          className={`ml-2 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
           }`}
         >
-          {console.log(getSelectedValue(selectedKeys))}
-          {getSelectedValue(selectedKeys) || "House Type"}
-          {/* <i className="bi bi-chevron-down" style={{ fontSize: "0.7rem" }}></i> */}
-          <span className="mt-1" color="#111111">
-            <FaChevronDown size={10} />
-          </span>
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu
-        aria-label={name}
-        disallowEmptySelection
-        selectionMode={isMulti ? "multiple" : "single"}
-        selectedKeys={selectedKeys}
-        onSelectionChange={handleKeyChange}
-      >
-        {options.map((option) => {
-          if (name == "type") {
-            return (
-              <DropdownItem
-                key={option}
-                href={generateURL({
-                  cityVal: city,
-                  houseTypeVal: option,
-                  saleLeaseVal: saleLease,
-                })}
-              >
-                {option}
-              </DropdownItem>
-            );
-          } else return <DropdownItem key={option}>{option}</DropdownItem>;
-        })}
-      </DropdownMenu>
-    </Dropdown>
-    // <Dropdown
-    //   name="House Type"
-    //   options={[{ name: "test", link: "/text" }]}
-    // ></Dropdown>
+          <FaChevronDown size={10} />
+        </span>
+      </button>
+
+      {isOpen && (
+        <div
+          className="
+          absolute z-50 w-48 mt-1 
+          bg-white rounded-lg shadow-lg 
+          border border-gray-200 
+          py-1 max-h-60 overflow-auto
+        "
+        >
+          {options.map((option) => (
+            <div
+              key={option}
+              onClick={() => handleSelect(option)}
+              className="
+                px-4 py-2 text-sm text-gray-700
+                hover:bg-gray-100 cursor-pointer
+                transition-colors
+              "
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 

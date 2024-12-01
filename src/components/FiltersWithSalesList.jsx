@@ -209,6 +209,7 @@ const FiltersWithSalesList = ({
             {[
               (requiredType &&
                 capitalizeFirstLetter(requiredType + plural[requiredType])) ||
+                "" ||
                 homeText,
               "for " + capitalizeFirstLetter(saleLeaseVal),
               ,

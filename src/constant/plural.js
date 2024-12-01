@@ -9,4 +9,5 @@ export const plural = {
   Restaurant: "s",
   "Convenience Store": "s",
   "Gas Station": "s",
+  "Industrial Space": "s",
 };
