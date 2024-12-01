@@ -207,10 +207,10 @@ export const houseType = {
     value: "Gas Stations",
     slug: "gas-station",
   },
-  motel: {
-    name: "Motel",
-    value: "Restaurant/Motel/Inn",
-    slug: "motel",
+  hotel: {
+    name: "Hotel",
+    value: "Hotel/Motel/Inn",
+    slug: "hotel",
   },
   convenience: {
     name: "Convenience Store",
@@ -226,5 +226,10 @@ export const houseType = {
     name: "Land",
     value: "Residential",
     slug: "land",
+  },
+  industrial: {
+    name: "Industrial Space",
+    value: "Industrial",
+    slug: "industrial-space",
   },
 };
