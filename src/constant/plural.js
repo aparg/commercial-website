@@ -10,4 +10,5 @@ export const plural = {
   "Convenience Store": "s",
   "Gas Station": "s",
   "Industrial Space": "s",
+  House: "s",
 };
