@@ -161,49 +161,7 @@ const ResaleCard = ({ curElem, small = false, showDecreasedPrice = false }) => {
                   {" "}
                   MLS® #{curElem.MLS}
                 </p> */}
-              <span className={`text-black text-xs`}>
-                <div className="flex flex-row justify-start">
-                  {curElem.Bedrooms && (
-                    <div className="flex items-center mr-3">
-                      <img
-                        src="/resale-card-img/bedrooms.svg"
-                        className="w-3 mr-[2px] inline"
-                        alt="bedrooms"
-                      />
-                      <span>
-                        {Math.floor(curElem.Bedrooms)}{" "}
-                        <span className="hidden sm:inline">Bed</span>
-                      </span>
-                    </div>
-                  )}
-                  {curElem.Washrooms && (
-                    <div className="flex items-center mr-3">
-                      <img
-                        src="/resale-card-img/bathrooms.svg"
-                        className="w-3 mr-[2px] inline"
-                        alt="washrooms"
-                      />
-                      <span>
-                        {Math.floor(curElem.Washrooms)}{" "}
-                        <span className="hidden sm:inline">Bath</span>
-                      </span>
-                    </div>
-                  )}
-                  {curElem.GarageSpaces && (
-                    <div className="flex items-center mr-3">
-                      <img
-                        src="/resale-card-img/garage.svg"
-                        className="w-3 mr-[2px] inline"
-                        alt="washrooms"
-                      />
-                      <span>
-                        {Math.floor(curElem.GarageSpaces)}{" "}
-                        <span className="hidden sm:inline">Garage</span>
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </span>
+
               <div className="flex flex-row justify-between my-1">
                 <div className="text-black">
                   <div className="text-dark text-sm">

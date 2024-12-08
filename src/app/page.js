@@ -12,6 +12,7 @@ import MobilePromo from "@/components/MobilePromo";
 import SeeListings from "@/components/SeeListings";
 import SpecificListings from "@/components/SpecificListings";
 import { houseType } from "@/constant";
+import PopularCategories from "@/components/PopularCategories";
 
 export const metadata = {
   title: "Commercialspot.ca | Businesses in Ontario",
@@ -49,7 +50,7 @@ export default async function Home() {
     limit: 3,
     range: undefined,
   });
-  const MOTELS = await getFilteredRetsData({
+  const CONVENIENCESTORES = await getFilteredRetsData({
     houseType: ["Convenience/Variety"],
     offset: 0,
     limit: 3,
@@ -110,8 +111,15 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
+
       <SeeListings />
       <MobilePromo></MobilePromo>
+      <div className="mx-auto max-w-[90%] my-10 sm:my-20">
+        <h3 className="text-xl sm:text-3xl font-bold w-[100%] sm:w-auto">
+          Popular categories
+        </h3>
+        <PopularCategories />
+      </div>
       <section className="mx-auto max-w-[90%]">
         <PropertyDisplaySection
           title="Explore businesses in Toronto"
@@ -154,7 +162,10 @@ export default async function Home() {
         <SpecificListings
           data={[
             { data: RESTAURANTS, topic: "Latest Restaurant Listings" },
-            { data: MOTELS, topic: "Latest Convenience Store Listings" },
+            {
+              data: CONVENIENCESTORES,
+              topic: "Latest Convenience Store Listings",
+            },
             { data: GASSTATIONS, topic: "Latest Gas Station Listings" },
           ]}
           topic="Hot Listings"

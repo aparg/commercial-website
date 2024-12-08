@@ -236,7 +236,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
           )}
         </div> */}
 
-        <div className="rounded-full overflow-hidden sm:mr-4 hover:shadow-lg">
+        <div className="rounded-full sm:mr-4 hover:shadow-lg">
           <CustomDropdown
             options={houseTypeOptions}
             defaultValue={
@@ -373,86 +373,128 @@ const CustomDropdown = ({
   value,
   handleFilterChange,
   isMobileView,
+  isMulti = false,
+  defaultValue,
   city,
   saleLease,
-  defaultValue,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedValues, setSelectedValues] = useState(
+    isMulti ? [...value] : [value]
+  );
   const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+  const handleClickOutside = useCallback((event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
   }, []);
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [handleClickOutside]);
+
   const handleSelect = (option) => {
-    if (name === "type") {
-      const url = generateURL({
-        cityVal: city,
-        houseTypeVal: option,
-        saleLeaseVal: saleLease,
-      });
-      window.location.href = url;
+    let newValues;
+    if (isMulti) {
+      newValues = selectedValues.includes(option)
+        ? selectedValues.filter((val) => val !== option)
+        : [...selectedValues, option];
+    } else {
+      newValues = [option];
+      setIsOpen(false);
     }
-    handleFilterChange(name, option);
-    setIsOpen(false);
+
+    setSelectedValues(newValues);
+    handleFilterChange(name, newValues.join(", ").replaceAll("_", " "));
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="inline-block" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`
           flex items-center justify-between
-          capitalize text-xs sm:text-sm h-[28px] sm:h-[34px]
-          px-3 rounded-full transition-colors
-          ${isMobileView ? "px-1 gap-1 min-w-unit-0 min-w-10" : ""}
+          capitalize text-xs sm:text-sm h-[28px] sm:h-[34px] 
+          rounded-full px-3 border
+          ${isMobileView ? "px-1 gap-1 min-w-[40px]" : "min-w-[120px]"}
           ${
-            value && value !== defaultValue
+            selectedValues[0] !== defaultValue
               ? `bg-primary-green text-white border-primary-green`
-              : `bg-white border-[2px] border-gray-filter hover:bg-gray-50`
+              : "border-gray-300 bg-white"
           }
+          hover:shadow-md transition-all text-center
         `}
       >
-        <span>{value || "House Type"}</span>
-        <span
-          className={`ml-2 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        >
-          <FaChevronDown size={10} />
+        <span className="truncate">
+          {selectedValues.join(", ").replaceAll("_", " ")}
         </span>
+        <FaChevronDown
+          size={10}
+          className={`ml-2 transition-transform ${isOpen ? "rotate-180" : ""}`}
+        />
       </button>
 
       {isOpen && (
         <div
-          className="
-          absolute z-50 w-48 mt-1 
-          bg-white rounded-lg shadow-lg 
-          border border-gray-200 
-          py-1 max-h-60 overflow-auto
-        "
+          className={`
+            min-w-[200px] max-h-[300px] overflow-y-auto
+            bg-white rounded-lg shadow-lg
+            border border-gray-200
+            mt-2
+          `}
+          style={{
+            position: "absolute",
+            zIndex: 1000,
+            marginTop: "8px",
+            boxShadow:
+              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+          }}
         >
-          {options.map((option) => (
-            <div
-              key={option}
-              onClick={() => handleSelect(option)}
-              className="
-                px-4 py-2 text-sm text-gray-700
-                hover:bg-gray-100 cursor-pointer
-                transition-colors
-              "
-            >
-              {option}
-            </div>
-          ))}
+          {options.map((option) => {
+            if (name === "type") {
+              const url = generateURL({
+                cityVal: city,
+                houseTypeVal: option,
+                saleLeaseVal: saleLease,
+              });
+
+              return (
+                <Link
+                  key={option}
+                  href={url}
+                  className="
+                    block w-full px-4 py-2
+                    hover:bg-gray-100 
+                    text-sm text-gray-700
+                    cursor-pointer
+                  "
+                >
+                  {option}
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={option}
+                onClick={() => handleSelect(option)}
+                className={`
+                  px-4 py-2
+                  hover:bg-gray-100 
+                  text-sm cursor-pointer
+                  ${
+                    selectedValues.includes(option)
+                      ? "bg-gray-50 text-primary-green font-medium"
+                      : "text-gray-700"
+                  }
+                `}
+              >
+                {option}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

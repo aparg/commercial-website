@@ -207,11 +207,11 @@ export const houseType = {
     value: "Gas Stations",
     slug: "gas-station",
   },
-  hotel: {
-    name: "Hotel",
-    value: "Hotel/Motel/Inn",
-    slug: "hotel",
-  },
+  // hotel: {
+  //   name: "Hotel",
+  //   value: "Hotel/Motel/Inn",
+  //   slug: "hotel",
+  // },
   convenience: {
     name: "Convenience Store",
     value: "Convenience/Variety",
@@ -222,14 +222,14 @@ export const houseType = {
     value: "Restaurant",
     slug: "restaurant",
   },
-  land: {
-    name: "Land",
-    value: "Residential",
-    slug: "land",
-  },
-  industrial: {
-    name: "Industrial Space",
-    value: "Industrial",
-    slug: "industrial-space",
-  },
+  // land: {
+  //   name: "Land",
+  //   value: "Residential",
+  //   slug: "land",
+  // },
+  // industrial: {
+  //   name: "Industrial Space",
+  //   value: "Industrial",
+  //   slug: "industrial-space",
+  // },
 };

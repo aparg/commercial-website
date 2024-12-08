@@ -65,22 +65,22 @@ const SeeListings = () => {
                   Restaurant for Sale
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href={generateURL({ houseTypeVal: "motel" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
                   Motels for Sale
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href={generateURL({ houseTypeVal: "land" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
                   Land for Sale
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href={generateURL({ houseTypeVal: "gas station" })}
