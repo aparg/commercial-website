@@ -57,15 +57,10 @@ const ContactForm = () => {
         />
 
         <p className="text-xs text-gray-500 text-center">
-          Commercialspot.ca is an online businesses database for properties in
-          Canada. Commercialspot.ca curates the list of businesses that are
-          publicly available on the internet and does not take part in any real
-          estate transactions. Be advised the information provided on this page
-          could be outdated or inaccurate. By submitting the above form, you
-          consent to real estate agents advertising on this page to connect with
-          you. We may share your info with our partners or advertisers to help
-          you with your questions. You can unsubscribe at any time by emailing
-          us.
+          I agree to receive marketing and customer service calls and text
+          messages from Elixir Real Estate Inc., Brokerage*. Consent is not a
+          condition of purchase. Msg/data rates may apply. Msg frequency varies.
+          Reply STOP to unsubscribe. Privacy Policy & Terms of Service.
         </p>
 
         <button

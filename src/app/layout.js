@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
         />
         <Navbar />
         <GoogleAnalytics />
-        <main className="">{children}</main>
+        <main className="overflow-y-hidden">{children}</main>
         <Footer />
       </body>
     </html>

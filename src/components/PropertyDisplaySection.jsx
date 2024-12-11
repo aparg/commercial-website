@@ -6,6 +6,7 @@ const PropertyDisplaySection = ({
   subtitle,
   exploreAllLink,
   children,
+  showExploreAll = true,
 }) => {
   return (
     <div className="mt-10 sm:mt-20">
@@ -25,13 +26,15 @@ const PropertyDisplaySection = ({
         )}
       </div>
       {children}
-      <div className="flex justify-center">
-        <Link href={exploreAllLink || "#"} className="sm:hidden">
-          <button className="border-black font-bold border-2 inline px-1 sm:px-3 py-2 rounded-md text-sm mt-1 sm:text-md">
-            Explore All
-          </button>
-        </Link>
-      </div>
+      {showExploreAll && (
+        <div className="flex justify-center">
+          <Link href={exploreAllLink || "#"} className="sm:hidden">
+            <button className="border-black font-bold border-2 inline px-1 sm:px-3 py-2 rounded-md text-sm mt-1 sm:text-md">
+              Explore All
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

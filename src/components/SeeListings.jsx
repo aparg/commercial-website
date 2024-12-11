@@ -100,7 +100,9 @@ const SeeListings = () => {
             </ul>
           </div>
           <div className="">
-            <h2 className="font-bold text-xl mb-2 text-center">Rent or Buy</h2>
+            <h2 className="font-bold text-xl mb-2 text-center">
+              Businesses in Ontario
+            </h2>
             <ul className="flex-col justify-center text-center">
               <li>
                 <Link
@@ -110,14 +112,14 @@ const SeeListings = () => {
                   Ontario Businesses for Sale
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href={generateURL({ saleLeaseVal: "lease" })}
                   className="hover:text-primary-green my-4 sm:font-medium text-sm"
                 >
                   Ontario Businesses for Lease
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </section>

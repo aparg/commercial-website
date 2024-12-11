@@ -57,7 +57,7 @@ const TextOverImageCard = ({ imageSrc, title, link }) => {
 const PopularCategories = () => {
   return (
     <div className="">
-      <div className="flex flex-wrap sm:space-x-4 mt-4">
+      <div className="flex flex-wrap justify-center sm:justify-start sm:space-x-4 mt-4">
         {cardsData.map((card) => (
           <TextOverImageCard {...card} />
         ))}

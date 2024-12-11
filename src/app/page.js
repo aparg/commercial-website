@@ -13,6 +13,7 @@ import SeeListings from "@/components/SeeListings";
 import SpecificListings from "@/components/SpecificListings";
 import { houseType } from "@/constant";
 import PopularCategories from "@/components/PopularCategories";
+import InstagramPosts from "@/components/InstagramPosts";
 
 export const metadata = {
   title: "Commercialspot.ca | Businesses in Ontario",
@@ -186,6 +187,12 @@ export default async function Home() {
         </PropertyDisplaySection>
         {/* <div className="flex flex-col items-center mt-40 sm:mt-40"></div> */}
         <ContactForm />
+        <PropertyDisplaySection
+          title="Follow us on Instagram"
+          showExploreAll={false}
+        >
+          <InstagramPosts />
+        </PropertyDisplaySection>
       </section>
       {/* pass props type="commercial" only for commercial card slider, default is commercial */}
     </>

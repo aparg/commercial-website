@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { generateURL } from "@/helpers/generateURL";
+import { MapPin } from "lucide-react";
 
 const HouseTypeCard = ({ type, icon, link }) => (
   <Link href={link} className="text-black">
@@ -21,61 +22,15 @@ const houseTypes = [
 
 const HeroSection = () => {
   return (
-    <div className="">
-      <div className="mx-auto">
-        <div
-          className="relative flex h-[50vh] sm:h-[70vh] flex-col lg:flex-row items-center justify-center pt-10 gap-x-10 lg:pb-20 gap-y-12 sm:gap-y-0 px-2 sm:px-0 bg-bottom bg-no-repeat"
-          // id="hero-section"
-        >
-          <div className="w-full z-10 pb-20 sm:w-screen flex flex-col items-center mb-10 lg:mb-0 order-2 sm:order-1 cover">
-            {/* <Link href="/">
-              <div className="flex flex-col items-center justify-start mb-5">
-                <img
-                  src="/logo-commercial.png"
-                  alt="Commercialspot.ca Logo"
-                  width={200}
-                  height={200}
-                />
-              </div>
-            </Link> */}
-            {/* <img
-              src="/hero-img.jpg"
-              className="absolute z-[-1] object-cover w-full h-full top-0 left-0 opacity-65"
-            ></img> */}
-            <h1 className="text-[1.3rem] sm:text-[3rem] font-extrabold pb-0 mb-0 mt-2 mt-md-0 relative text-center">
-              <span className="d-block mb-2 text-black">Find Your Next </span>{" "}
-              <span className="text-black">Business With Us! </span>
-            </h1>
-
-            {/* <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-12">
-              {houseTypes.map((house, index) => (
-                <HouseTypeCard
-                  key={index}
-                  type={house.type}
-                  icon={house.icon}
-                  link={generateURL({
-                    houseTypeVal: house.type.split("-").join("").toLowerCase(),
-                  })}
-                />
-              ))}
-            </div> */}
-            <div className="w-[90%] sm:w-[60%] mt-5 hidden sm:block">
-              <SearchBar numberOfSuggestions={3} height={60} />
-            </div>
-            <div className="w-[90%] sm:w-[60%] mt-2 sm:mt-10 block sm:hidden">
-              <SearchBar
-                numberOfSuggestions={3}
-                height={60}
-                placeholder="Search"
-              />
-            </div>
-            <div className="text-medium sm:text-xl mt-2 text-center">
-              Find{" "}
-              <span className="font-bold">businesses for sale or lease</span>{" "}
-              across Ontario!
-            </div>
-          </div>
+    <div className="-mt-20 min-h-screen bg-gradient-to-b from-[#ffeeee] to-white flex flex-col justify-center items-center">
+      <h1 className="font-bold text-3xl sm:text-6xl sm:leading-[4rem]">
+        <div className="text-center">Canada's Leading</div>
+        <div>
+          Commercial Platform<span className="text-red-500">.</span>
         </div>
+      </h1>
+      <div className="w-[80%] sm:w-[50%] my-3">
+        <SearchBar />
       </div>
     </div>
   );

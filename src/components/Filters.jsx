@@ -66,7 +66,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
   const { isMobileView } = useDeviceView();
 
   //options for lease or sale
-  const saleLeaseOptions = Object.values(saleLease).map((item) => item.name);
+  // const saleLeaseOptions = Object.values(saleLease).map((item) => item.name);
   //options for bed count
   const bedCountOptions = Object.values(bedCount)
     .filter((opt) => opt.value > 0)
@@ -204,14 +204,14 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
           handleFilterChange={handleFilterChange}
           isActive={!filterState.city}
         />
-        <IndividualFilterButton
+        {/* <IndividualFilterButton
           options={saleLeaseOptions}
           name="saleLease"
           value={filterState.saleLease}
           handleFilterChange={handleFilterChange}
           city={filterState.city}
           type={filterState.type}
-        />
+        /> */}
 
         {/* <div className="rounded-full sm:mr-4">
           {isMobileView ? (
@@ -427,6 +427,7 @@ const CustomDropdown = ({
           hover:shadow-md transition-all text-center
         `}
       >
+        {console.log(selectedValues)}
         <span className="truncate">
           {selectedValues.join(", ").replaceAll("_", " ")}
         </span>
