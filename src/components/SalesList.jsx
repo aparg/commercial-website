@@ -17,6 +17,7 @@ import { saleLease, bedCount, houseType } from "@/constant";
 import ResaleCard from "./ResaleCard";
 import CreateSchema from "@/helpers/CreateSchema";
 import PageSelector from "./PageSelector";
+import CommercialCard from "./CommercialCard";
 
 const SalesList = ({
   salesData,
@@ -98,7 +99,7 @@ const SalesList = ({
                     __html: JSON.stringify(CreateSchema(curElem)),
                   }}
                 />
-                <ResaleCard curElem={curElem} />
+                <CommercialCard curElem={curElem} />
               </div>
             );
             // }

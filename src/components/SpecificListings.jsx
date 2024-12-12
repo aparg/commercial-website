@@ -1,5 +1,6 @@
 import React from "react";
 import ResaleCard from "./ResaleCard";
+import CommercialCard from "./CommercialCard";
 
 const SpecificListings = ({ topic, data }) => {
   // Array of background colors to alternate between
@@ -57,7 +58,7 @@ const SpecificListings = ({ topic, data }) => {
                     key={value.MLS}
                     className="transform hover:scale-102 hover:-translate-y-1 duration-300"
                   >
-                    <ResaleCard curElem={value} />
+                    <CommercialCard curElem={value} />
                   </div>
                 ))}
               </div>

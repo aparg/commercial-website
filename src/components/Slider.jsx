@@ -79,7 +79,7 @@ const Slider = ({ data, type }) => {
                         __html: JSON.stringify(CreateSchema(curElem)),
                       }}
                     />
-                    <ResaleCard curElem={curElem} />
+                    <CommercialCard curElem={curElem} />
                   </>
                 ) : type === "commercial" ? (
                   <CommercialCard curElem={curElem} />

@@ -8,6 +8,7 @@ import { generateURL } from "@/helpers/generateURL";
 import { usePathname } from "next/navigation";
 import useDeviceView from "@/helpers/useDeviceView";
 import MobileCityResoCard from "./MobileCityResoCard";
+import { LucideWatch, Timer, Watch, WatchIcon } from "lucide-react";
 
 const CommercialCard = ({ curElem, small = false }) => {
   const { isMobileView } = useDeviceView();
@@ -98,10 +99,6 @@ const CommercialCard = ({ curElem, small = false }) => {
                       {curElem.Use}
                     </div>
                   )}
-
-                  <div className="text-black text-xs p-[2px] rounded-md mx-1 bg-white flex items-center">
-                    <TimeAgo modificationTimestamp={curElem.TimestampSql} />
-                  </div>
                 </div>
               </div>
             </div>
@@ -122,6 +119,10 @@ const CommercialCard = ({ curElem, small = false }) => {
                   {Math.floor(curElem.TotalArea)} ft<sup>2</sup>
                 </span>
               </h2>
+              <div className="text-gray-800 text-[0.75rem] p-[2px] rounded-md bg-white flex gap-x-1 items-center my-2">
+                <Timer className="w-4 h-4" />
+                <TimeAgo modificationTimestamp={curElem.TimestampSql} />
+              </div>
               <p className="mb-0 fs-mine text-limit text-sm pb-0">
                 {" "}
                 MLS® #{curElem.MLS}
@@ -138,38 +139,6 @@ const CommercialCard = ({ curElem, small = false }) => {
                       <span className="p-4"></span>
                     )}
                   </div>
-                </div>
-              </div>
-              <div className="inline-flex justify-center items-center my-2">
-                <div
-                  className={`min-w-[50px] inline-flex item-center justify-center bg-[#3a88ef]/[0.08] hover:bg-[#3a88ef]/[0.2] rounded-md leading-7 py-[4px] px-[8px] text-xs mx-1`}
-                >
-                  <img
-                    className="pr-1 w-5"
-                    src="/commercial-card-img/mailOutline.svg"
-                    alt="Email"
-                  />
-                  Email
-                </div>
-                <div
-                  className={`min-w-[70px] inline-flex item-center justify-center bg-[#ffedea]/[0.5] hover:bg-[#ffdad4]/[0.8] rounded-md leading-7 py-[4px] px-[8px] text-xs mx-1`}
-                >
-                  <img
-                    className="pr-1 w-5"
-                    src="/commercial-card-img/phone.svg"
-                    alt="Phone"
-                  />
-                  Phone
-                </div>
-                <div
-                  className={`min-w-[70px] inline-flex item-center justify-center bg-[#43bb3f]/[0.1] hover:bg-[#43bb3f]/[0.2] rounded-md leading-7 py-[4px] px-[8px] text-xs mx-1`}
-                >
-                  <img
-                    className="pr-1 w-5"
-                    src="/commercial-card-img/whatsapp.svg"
-                    alt="whatsapp"
-                  />
-                  Whatsapp
                 </div>
               </div>
             </div>

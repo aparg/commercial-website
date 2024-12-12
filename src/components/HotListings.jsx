@@ -3,6 +3,7 @@ import React, { useState, useMemo, useEffect, useRef } from "react";
 //CONSTANT
 import useDeviceView from "@/helpers/useDeviceView";
 import ResaleCard from "./ResaleCard";
+import CommercialCard from "./CommercialCard";
 
 const plural = {
   Retail: " Businesses",
@@ -63,7 +64,7 @@ const HotListings = ({ salesData }) => {
           {salesData?.map((curElem, index) => {
             // if (curElem.PhotoCount > 0) {
             return (
-              <ResaleCard
+              <CommercialCard
                 // city={formattedCity}
                 key={index}
                 curElem={curElem}
