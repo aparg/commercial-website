@@ -109,19 +109,19 @@ const Footer = ({ cities }) => {
                     <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
                     <div className="flex justify-center space-x-4">
                       <Link
-                        href="https://www.facebook.com/profile.php?id=100078509119684"
+                        href="/"
                         className="text-gray-600 hover:text-blue-600 transition-colors"
                       >
                         <FaFacebook size={24} />
                       </Link>
                       <Link
-                        href="https://www.instagram.com/dolphin_realty/"
+                        href="https://www.instagram.com/realtorravigodara/"
                         className="text-gray-600 hover:text-pink-600 transition-colors"
                       >
                         <FaInstagram size={24} />
                       </Link>
                       <Link
-                        href="https://www.youtube.com/watch?v=DOr8JTMaQG0&t=1s"
+                        href="/"
                         className="text-gray-600 hover:text-blue-800 transition-colors"
                       >
                         <FaYoutube size={24} />
