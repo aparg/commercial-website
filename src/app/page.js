@@ -14,7 +14,7 @@ import SpecificListings from "@/components/SpecificListings";
 import { houseType } from "@/constant";
 import PopularCategories from "@/components/PopularCategories";
 import InstagramPosts from "@/components/InstagramPosts";
-import ClientExperiencesSection from "@/components/Reviews";
+import ClientExperiencesSection from "@/components/ClientExperience";
 
 export const metadata = {
   title: "Commercialspot.ca | Businesses in Ontario",

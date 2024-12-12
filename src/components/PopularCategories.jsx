@@ -31,7 +31,7 @@ const cardsData = [
 const TextOverImageCard = ({ imageSrc, title, link }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <div className="h-80 w-80 rounded-md overflow-hidden relative group/card mb-5">
+    <div className="h-50 w-full sm:h-80 sm:w-80 rounded-md overflow-hidden relative group/card mb-5">
       <Link href={link} className="w-full h-full inline ">
         <div
           className="rounded w-full h-full shadow-lg bg-gradient-to-t from-black to-transparent absolute"
@@ -57,7 +57,7 @@ const TextOverImageCard = ({ imageSrc, title, link }) => {
 const PopularCategories = () => {
   return (
     <div className="">
-      <div className="flex flex-wrap justify-center sm:justify-start sm:space-x-4 mt-4">
+      <div className="flex flex-wrap justify-start sm:space-x-4 mt-4">
         {cardsData.map((card) => (
           <TextOverImageCard {...card} />
         ))}
