@@ -53,16 +53,7 @@ const CommercialCard = ({ curElem, small = false }) => {
 
     return parts.filter(Boolean).join("-");
   })();
-  return isMobileView ? (
-    <MobileCityResoCard
-      streetAndMLS={streetAndMLS}
-      small={small}
-      handleImageError={handleImageError}
-      imgSrc={imgSrc}
-      curElem={curElem}
-      price={price}
-    />
-  ) : (
+  return (
     <section className="">
       <Link
         href={generateURL({
@@ -74,7 +65,7 @@ const CommercialCard = ({ curElem, small = false }) => {
       >
         <div className="lg:px-0 h-full w-full">
           <div
-            className={`flex sm:flex-col flex-row overflow-hidden transition-all duration-200 transform bg-white shadow group rounded-xl p-0 hover:shadow-lg hover:-translate-y-1 relative`}
+            className={`flex flex-col overflow-hidden transition-all duration-200 transform bg-white shadow group rounded-xl p-0 hover:shadow-lg hover:-translate-y-1 relative`}
           >
             <div
               className={`${small ? "h-44" : "h-52"} overflow-hidden relative`}
@@ -103,21 +94,23 @@ const CommercialCard = ({ curElem, small = false }) => {
               </div>
             </div>
             <div className="flex-1 sm:px-3 py-2 px-2">
-              <h2 className="font-extrabold text-3xl items-center justify-start mw">
-                {price}
-                {""}
+              <h2 className="font-extrabold text-3xl sm:items-center justify-start mw flex flex-col sm:flex-row">
+                <div className="min-w-fit ">
+                  {price}
+                  {""}
 
-                {curElem.SaleLease === saleLease.lease.value && (
-                  <span> /mo</span>
-                )}
+                  {curElem.SaleLease === saleLease.lease.value && (
+                    <span> /mo</span>
+                  )}
+                </div>
 
-                <span
-                  className={`shadow-lg p-1 ms-1 text-black text-xs ${
+                <div
+                  className={`sm:shadow-lg p-1 sm:ms-1 text-black text-xs min-w-fit ${
                     small && "hidden"
                   }`}
                 >
                   {Math.floor(curElem.TotalArea)} ft<sup>2</sup>
-                </span>
+                </div>
               </h2>
               <div className="text-gray-800 text-[0.75rem] p-[2px] rounded-md bg-white flex gap-x-1 items-center my-2">
                 <Timer className="w-4 h-4" />
