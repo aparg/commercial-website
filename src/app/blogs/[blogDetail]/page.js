@@ -20,7 +20,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/blogs/${blogSlug}`,
+      canonical: `https://commercialspot.ca/blogs/${blogSlug}`,
     },
     title: `${blog.news_title}`,
   };

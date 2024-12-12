@@ -114,7 +114,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
       };
     }
     scrollToFilters();
-    console.log(newFilterState);
+
     setFilterState({ ...newFilterState });
     fetchFilteredData(newFilterState);
   };
@@ -182,7 +182,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
     filterState.saleLease == saleLease.sale.name
       ? priceRangesSaleProperties
       : priceRangesLeaseProperties;
-  console.log(filterState);
+
   return (
     <>
       <div

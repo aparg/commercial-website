@@ -14,6 +14,7 @@ import SpecificListings from "@/components/SpecificListings";
 import { houseType } from "@/constant";
 import PopularCategories from "@/components/PopularCategories";
 import InstagramPosts from "@/components/InstagramPosts";
+import ClientExperiencesSection from "@/components/Reviews";
 
 export const metadata = {
   title: "Commercialspot.ca | Businesses in Ontario",
@@ -122,6 +123,24 @@ export default async function Home() {
         <PopularCategories />
       </div>
       <section className="mx-auto max-w-[90%]">
+        <div className="bg-[#ffddb7] p-4 rounded-xl">
+          <PropertyDisplaySection
+            title="Featured Listings"
+            subtitle={""}
+            exploreAllLink={generateURL({ saleLeaseVal: "sale" })}
+            withSpacing={false}
+          >
+            <Slider
+              data={[
+                RESTAURANTS[0],
+                RESTAURANTS[1],
+                CONVENIENCESTORES[0],
+                GASSTATIONS[0],
+              ]}
+              type="commercial"
+            />
+          </PropertyDisplaySection>
+        </div>
         <PropertyDisplaySection
           title="Explore businesses in Toronto"
           subtitle={""}
@@ -193,6 +212,7 @@ export default async function Home() {
         >
           <InstagramPosts />
         </PropertyDisplaySection>
+        <ClientExperiencesSection />
       </section>
       {/* pass props type="commercial" only for commercial card slider, default is commercial */}
     </>

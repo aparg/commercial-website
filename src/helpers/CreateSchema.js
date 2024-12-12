@@ -29,7 +29,7 @@ export default function CreateSchema(listing) {
     offers: {
       "@type": "AggregateOffer",
       url:
-        "https://lowrise.ca/" +
+        "https://commercialspot.ca/" +
         generateURL({
           cityVal: listing.Municipality,
           listingIDVal: slugGenerator(listing),

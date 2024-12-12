@@ -97,10 +97,10 @@ const Footer = ({ cities }) => {
                       <p>
                         Email:{" "}
                         <Link
-                          href="mailto:info@lowrise.ca"
+                          href="mailto:info@commercialspot.ca"
                           className="text-blue-600 hover:underline"
                         >
-                          info@lowrise.ca
+                          info@commercialspot.ca
                         </Link>
                       </p>
                     </address>

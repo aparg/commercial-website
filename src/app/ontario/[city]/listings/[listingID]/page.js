@@ -194,7 +194,9 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/listings/${slugGenerator(main_data)}`,
+      canonical: `https://commercialspot.ca/listings/${slugGenerator(
+        main_data
+      )}`,
     },
     openGraph: {
       images: await fetch(imageURLs[0]),

@@ -7,9 +7,9 @@ const ContactForm = () => {
       <img
         src="/contact-bottom.png"
         alt="Logo"
-        className="mx-auto mb-8"
-        width={400}
-        height={400}
+        className="mx-auto mb-8 rounded-full"
+        width={200}
+        height={200}
       />
       <h1 className="text-3xl font-bold text-center mb-2">
         Have any Questions ?

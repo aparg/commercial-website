@@ -24,7 +24,7 @@ export const getSalesData = async (offset, limit, city = null, listingType) => {
     if (listingType) {
       selectQuery += `,TypeOwnSrch=${listingType}`;
     }
-    console.log(url);
+
     const res = await fetch(url, options);
     const data = await res.json();
     return data.results;
@@ -157,7 +157,7 @@ export const getFilteredRetsData = async (queryParams) => {
       method: "GET",
       // cache: "no-store",
     };
-    console.log(url);
+
     const res = await fetch(url, options);
     const data = await res.json();
     return data.results;

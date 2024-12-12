@@ -40,7 +40,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/ontario/businesses-for-lease`,
+      canonical: `https://commercialspot.ca/ontario/businesses-for-lease`,
     },
     openGraph: {
       images: "/favicon.ico",

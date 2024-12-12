@@ -7,9 +7,10 @@ const PropertyDisplaySection = ({
   exploreAllLink,
   children,
   showExploreAll = true,
+  withSpacing = true,
 }) => {
   return (
-    <div className="mt-10 sm:mt-20">
+    <div className={withSpacing && "mt-10 sm:mt-20"}>
       <div className="my-2 sm:my-4">
         <div className="flex flex-row items-center justify-between">
           <h3 className="text-xl sm:text-3xl font-bold w-[100%] sm:w-auto">

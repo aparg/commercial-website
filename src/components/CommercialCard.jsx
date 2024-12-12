@@ -91,7 +91,7 @@ const CommercialCard = ({ curElem, small = false }) => {
                 <div className="flex flex-row items-center">
                   {curElem.Use && (
                     <div
-                      className="text-black text-xs p-[2px] flex items-center rounded-md mx-1"
+                      className="text-black text-xs py-[2px] px-1 flex items-center rounded-md mx-1"
                       style={{
                         background: "white",
                       }}

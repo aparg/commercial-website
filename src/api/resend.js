@@ -13,7 +13,7 @@ export const sendEmail = async ({ content, page = null, title = null }) => {
   }
   console.log("sending...");
   const { data, error } = await resend.emails.send({
-    from: "lowrise <info@lowrise.ca>",
+    from: "lowrise <info@commercialspot.ca>",
     to: ["contact@homebaba.ca", "apargtm@gmail.com"],
     subject: `Inquiry from ${page || "property"} in lowrise`,
     html: `<h1>${

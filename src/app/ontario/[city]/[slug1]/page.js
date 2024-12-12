@@ -52,7 +52,9 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://lowrise.ca/ontario/${type}/${saleLeaseValue || type}`,
+      canonical: `https://commercialspot.ca/ontario/${type}/${
+        saleLeaseValue || type
+      }`,
     },
     openGraph: {
       images: "/favicon.ico",

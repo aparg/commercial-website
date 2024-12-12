@@ -88,14 +88,14 @@ const Navbar = (props) => {
         cityVal: cityName,
       }),
     },
-    {
-      name: "Motel for Sale" + inCity,
-      link: generateURL({
-        houseTypeVal: "motel",
-        saleLeaseVal: "sale",
-        cityVal: cityName,
-      }),
-    },
+    // {
+    //   name: "Motel for Sale" + inCity,
+    //   link: generateURL({
+    //     houseTypeVal: "motel",
+    //     saleLeaseVal: "sale",
+    //     cityVal: cityName,
+    //   }),
+    // },
     {
       name: "Restaurant for Sale" + inCity,
       link: generateURL({
@@ -104,14 +104,14 @@ const Navbar = (props) => {
         cityVal: cityName,
       }),
     },
-    {
-      name: "Land for Sale" + inCity,
-      link: generateURL({
-        houseTypeVal: "land",
-        saleLeaseVal: "sale",
-        cityVal: cityName,
-      }),
-    },
+    // {
+    //   name: "Land for Sale" + inCity,
+    //   link: generateURL({
+    //     houseTypeVal: "land",
+    //     saleLeaseVal: "sale",
+    //     cityVal: cityName,
+    //   }),
+    // },
     {
       name: "Gas Station for Sale" + inCity,
       link: generateURL({
@@ -351,9 +351,12 @@ const Navbar = (props) => {
               }
              ${!isHomePage && "text-black"}`}
             >
-              <img src="/contact.png" className="w-12"></img>
+              <img
+                src="/images/ravi-godara.png"
+                className="rounded-full h-10 w-10"
+              ></img>
               <div className="flex flex-col items-center justify-center">
-                <div className="text-lg font-bold">249-201-6665</div>
+                <div className="text-lg font-bold">905-226-7284</div>
                 <div className="text-xs">Speak with our team</div>
               </div>
             </Link>
@@ -430,9 +433,12 @@ const Navbar = (props) => {
              ${!isHomePage && "text-black"}`}
               >
                 <Link href="tel:4168458996" className="flex items-center">
-                  <img src="/contact.png" className="w-12"></img>
+                  <img
+                    src="/images/ravi-godara.png"
+                    className="rounded-full h-10 w-10"
+                  ></img>
                   <div className="flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold">(416) 845-8996</div>
+                    <div className="text-lg font-bold">905-226-7284</div>
                     <div className="text-xs">Speak with our team</div>
                   </div>
                 </Link>
