@@ -212,7 +212,9 @@ export default async function Home() {
         >
           <InstagramPosts />
         </PropertyDisplaySection>
-        <ClientExperiencesSection />
+        <div className="my-10 sm:my-20">
+          <ClientExperiencesSection />
+        </div>
       </section>
       {/* pass props type="commercial" only for commercial card slider, default is commercial */}
     </>
