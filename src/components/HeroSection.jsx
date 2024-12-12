@@ -1,60 +1,64 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import SearchBar from "./SearchBar";
+import SearchBar from "@/components/SearchBar";
 import { generateURL } from "@/helpers/generateURL";
-import { MapPin } from "lucide-react";
-
-const HouseTypeCard = ({ type, icon, link }) => (
-  <Link href={link} className="text-black">
-    <div className="bg-white p-4 rounded-lg text-center hover:cursor-pointer hover:border-primary-green border-2 transition duration-300 h-full">
-      <div className="text-3xl mb-2">{icon}</div>
-      <h3 className="font-semibold text-gray-800">{type}</h3>
-    </div>
-  </Link>
-);
-
-const houseTypes = [
-  { type: "Detached", icon: "🏡" },
-  { type: "Semi-Detached", icon: "🏘️" },
-  { type: "Townhouse", icon: "🏚️" },
-];
 
 const HeroSection = () => {
+  const cities = [
+    "Toronto",
+    "Calgary",
+    "Mississauga",
+    "Milton",
+    "Etobicoke",
+    "Brampton",
+    "Markham",
+    "Vaughan",
+    "Edmonton",
+  ];
+
   return (
-    <div className="-mt-20 min-h-screen bg-gradient-to-b from-[#ffeeee] to-white flex flex-col justify-center items-center">
-      <h1 className="font-bold text-3xl sm:text-6xl sm:leading-[4rem]">
-        <div className="text-center">Canada's Leading</div>
-        <div>
-          Commercial Platform<span className="text-red-500">.</span>
+    <div className="min-h-screen bg-gradient-to-b from-[#fff0ef] to-white">
+      <div className="container mx-auto px-6 md:px-8 pt-24 md:pt-40 pb-8 md:pb-16">
+        {/* Hero Content */}
+        <div className="max-w-4xl mx-auto text-center space-y-1">
+          <h2 className="text-3xl md:text-5xl tracking-tight font-extrabold leading-[1.2] md:leading-[1.2]">
+            Canada's Leading <br className="md:block" /> Commercial Platform
+            <span className="text-red-500">.</span>
+          </h2>
+
+          <SearchBar padding="py-4 md:py-8" width="w-[330px] md:w-[750px]" />
+
+          {/* City Links */}
+          <div className="flex flex-wrap justify-center gap-0 md:gap-1 px-4 md:px-0 max-w-2xl mx-auto">
+            {cities.map((city) => (
+              <Link
+                key={city}
+                href={`${generateURL({ cityVal: city.toLowerCase() })}`}
+                className="text-xs md:text-xs text-gray-700 hover:text-gray-900 underline-offset-4 underline px-1.5 md:px-2 py-0.5 md:py-1"
+              >
+                {city}
+              </Link>
+            ))}
+          </div>
         </div>
-      </h1>
-      <div className="w-[80%] sm:w-[50%] my-3">
-        <SearchBar />
+
+        {/* Builders Section */}
+        <div className="mt-20 md:mt-40 text-center">
+          <h3 className="text-base md:text-lg mb-4 md:mb-8">
+            Homes from trusted builders across the country
+          </h3>
+          <Image
+            src="/builders.png"
+            alt="Builders"
+            width={600}
+            height={200}
+            className="mx-auto max-w-full h-auto"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
 export default HeroSection;
-
-{
-  /* <div className="w-full lg:w-1/2 relative order-1 sm:order-2">
-            <Image
-              src="/hero-img.png"
-              alt="Businesses"
-              width="800"
-              height="600"
-              className="rounded-lg h-[400px] sm:h-[500px] lg:h-[600px]"
-              priority
-            />
-            <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 p-4 rounded-lg">
-              <p className="text-sm font-semibold text-gray-900">
-                Featured Property
-              </p>
-              <p className="text-xs text-gray-600">
-                Modern Townhouse in Downtown
-              </p>
-            </div>
-          </div> */
-}

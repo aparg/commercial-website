@@ -23,7 +23,7 @@ const Autosuggest = ({
       : [];
   return (
     <div
-      className={`absolute top-0 border-r-1 border-l-1 border-b-1 border-black rounded-b-[28px] w-full bg-white p-4 overflow-hidden z-0 ${
+      className={`absolute top-0 border-r-1 border-l-1 border-b-1 border-gray-300 rounded-b-md w-full bg-white p-4 overflow-hidden shadow-xl z-0 ${
         firstRender
           ? "hidden"
           : displaySuggestions
@@ -37,11 +37,11 @@ const Autosuggest = ({
             </section> */}
 
       {/* SUGGESTIONS */}
-      {searchTerm && suggestions.length > 0 && (
+      <div className="text-xs text-center text-gray-600 font-bold">
+        SUGGESTIONS
+      </div>
+      {searchTerm && suggestions.length > 0 ? (
         <section className="my-1">
-          <div className="text-xs text-center text-gray-600 font-bold">
-            SUGGESTIONS
-          </div>
           <div>
             {suggestions.slice(0, numberOfSuggestions).map((suggestion) => {
               return (
@@ -55,6 +55,10 @@ const Autosuggest = ({
           </div>
           <span className="text-gray-700"></span>
         </section>
+      ) : (
+        <div className="text-gray-400 text-sm mt-2 mb-6">
+          No search results found.
+        </div>
       )}
 
       {/* RECENT SEARCHES */}

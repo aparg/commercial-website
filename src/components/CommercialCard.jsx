@@ -94,7 +94,7 @@ const CommercialCard = ({ curElem, small = false }) => {
               </div>
             </div>
             <div className="flex-1 sm:px-3 py-2 px-2">
-              <h2 className="font-extrabold text-3xl sm:items-center justify-start mw flex flex-col sm:flex-row">
+              <h2 className="font-extrabold text-2xl sm:text-3xl sm:items-center justify-start mw flex flex-col sm:flex-row">
                 <div className="min-w-fit ">
                   {price}
                   {""}

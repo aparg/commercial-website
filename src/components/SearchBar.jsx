@@ -107,18 +107,18 @@ const SearchBar = ({
   //style for input box
   let inputBoxClass = [];
   if (!small && !displaySuggestions) {
-    inputBoxClass.push("border-2 border-black");
+    inputBoxClass.push("border-2 border-gray-300");
   } else if (!displaySuggestions) {
     inputBoxClass.push("border-1 border-gray-300");
   }
   if (displaySuggestions) {
-    inputBoxClass.push("border-1 border-black rounded-t-[28px]");
+    inputBoxClass.push("border-1 border-gray-300 rounded-t-md");
   } else {
-    inputBoxClass.push("rounded-[28px]");
+    inputBoxClass.push("rounded-md");
   }
 
   return (
-    <div className={`flex flex-col relative rounded-[28px]`}>
+    <div className={`flex flex-col relative rounded-md shadow-xl`}>
       <div
         className={`w-full h-full flex overflow-hidden ${inputBoxClass.join(
           " "
@@ -144,7 +144,7 @@ const SearchBar = ({
         />
         <div className="flex items-center pr-1 pl-0 justify-center bg-white">
           {/* <CgSearch size="1.25rem" /> */}
-          {!small && !isMobileView ? (
+          {/* {!small && !isMobileView ? (
             <Button className={`bg-black rounded-full text-white font-medium`}>
               {" "}
               Search{" "}
@@ -152,8 +152,8 @@ const SearchBar = ({
           ) : small ? (
             <CgSearch size="1.25rem" className="mr-2" />
           ) : (
-            <CgSearch size="1.75rem" className="mr-2" />
-          )}
+          )} */}
+          <CgSearch size="1.75rem" className="mr-2" />
         </div>
       </div>
       <div className="relative">
