@@ -2,7 +2,7 @@ import Slider from "@/components/Slider";
 import { getFilteredRetsData, getSalesData } from "../api/getSalesData";
 import PropertyDisplaySection from "@/components/PropertyDisplaySection";
 import { generateURL } from "@/helpers/generateURL";
-import { fetchAllBlogPosts } from "@/api/blogs";
+// import { fetchAllBlogPosts } from "@/api/blogs";
 import HeroSection from "@/components/HeroSection";
 import CanadianCitiesShowcase from "@/components/CanadianCitiesShowcase";
 import ContactForm from "@/components/ContactForm";
@@ -64,7 +64,11 @@ export default async function Home() {
     limit: 3,
     range: undefined,
   });
-
+  const BROKERAGELISTINGS = await getFilteredRetsData({
+    listBrokerage: "ELIXIR REAL ESTATE INC.",
+    offset: INITIAL_OFFSET,
+    limit: INITIAL_LIMIT,
+  });
   // const fetchFireplacesData = async () => {
   //   const response = await fetch(
   //     "https://rets.dolphy.ca/commercial/Properties/?$range=minFireplacesTotal=1&$limit=4",
@@ -105,7 +109,7 @@ export default async function Home() {
   // const HOUSEWITHFIREPLACES = await fetchFireplacesData();
   // const HOUSEWITHSEPARATEENTRANCE = await fetchSepEntranceData();
   // const BLOGPOSTS = await fetchSomeBlogPosts({ pageSize: 4 });
-  const BLOGPOSTS = await fetchAllBlogPosts();
+  // const BLOGPOSTS = await fetchAllBlogPosts();
   {
     /* pass property propertyType:"commercial" only for commercial card slider, default is commercial */
   }
@@ -127,18 +131,10 @@ export default async function Home() {
           <PropertyDisplaySection
             title="Featured Listings"
             subtitle={""}
-            exploreAllLink={generateURL({ saleLeaseVal: "sale" })}
+            exploreAllLink={"/featured-listings"}
             withSpacing={false}
           >
-            <Slider
-              data={[
-                RESTAURANTS[0],
-                RESTAURANTS[1],
-                CONVENIENCESTORES[0],
-                GASSTATIONS[0],
-              ]}
-              type="commercial"
-            />
+            <Slider data={BROKERAGELISTINGS} type="commercial" />
           </PropertyDisplaySection>
         </div>
         <PropertyDisplaySection
@@ -197,13 +193,13 @@ export default async function Home() {
         >
           <Slider data={OAKVILLEHOMES} type="resale" />
         </PropertyDisplaySection>
-        <PropertyDisplaySection
+        {/* <PropertyDisplaySection
           title="The Commercialspot.ca Insights"
           subtitle=""
           exploreAllLink="/blogs"
         >
           <Slider data={BLOGPOSTS.slice(0, 4)} type="blog" />
-        </PropertyDisplaySection>
+        </PropertyDisplaySection> */}
         {/* <div className="flex flex-col items-center mt-40 sm:mt-40"></div> */}
         <ContactForm />
         <PropertyDisplaySection

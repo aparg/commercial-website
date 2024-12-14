@@ -124,7 +124,9 @@ export const getFilteredRetsData = async (queryParams) => {
     let rangeQuery = queryParams.minListPrice
       ? `minListPrice=${queryParams.minListPrice}`
       : "";
-
+    if (queryParams.listBrokerage) {
+      selectQueryArray.push(`ListBrokerage=${queryParams.listBrokerage}`);
+    }
     if (queryParams.hasBasement) {
       selectQueryArray.push(`Basement1=Apartment`);
     }

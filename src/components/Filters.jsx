@@ -427,7 +427,6 @@ const CustomDropdown = ({
           hover:shadow-md transition-all text-center
         `}
       >
-        {console.log(selectedValues)}
         <span className="truncate">
           {selectedValues.join(", ").replaceAll("_", " ")}
         </span>

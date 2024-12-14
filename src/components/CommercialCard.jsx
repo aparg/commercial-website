@@ -134,6 +134,9 @@ const CommercialCard = ({ curElem, small = false }) => {
                   </div>
                 </div>
               </div>
+              <div className="flex flex-row justify-between text-gray-400 text-xs py-2">
+                Listed by ${curElem.ListBrokerage}
+              </div>
             </div>
           </div>
         </div>

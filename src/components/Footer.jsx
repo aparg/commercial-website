@@ -71,12 +71,11 @@ const Footer = ({ cities }) => {
                   </Link>
                 </div>
                 <p className="text-sm leading-relaxed mb-8">
-                  Commercialspot.ca (“Commercialspot.ca”) is a real estate
-                  marketplace platform -owned by Homebaba technologies Inc.
-                  Commercialspot.ca refers potential buyers to real estate
+                  Commercial is a real estate marketplace platform -owned by
+                  Commercial in GTA refers potential buyers to real estate
                   agents that are licensed in the province where the respective
-                  property is located. Dolphin Realty is licensed as a real
-                  estate brokerage in Ontario.
+                  property is located. ELEXIR REAL ESTATE INC. is licensed as a
+                  real estate brokerage in Ontario.
                   <br />
                   <br />
                   IDX information is provided exclusively for consumers’
@@ -92,12 +91,12 @@ const Footer = ({ cities }) => {
                     <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
                     <address className="not-italic text-sm">
                       <p></p>
-                      <p>8300 Woodbine Ave, Markham, ON L3R 9Y7</p>
-                      <p>Phone: 289-302-6322</p>
+                      <p>1065 Canadian Pl Suite 207, Mississauga ON L4W 0C2</p>
+                      <p>Phone: 905-226-7284</p>
                       <p>
                         Email:{" "}
                         <Link
-                          href="mailto:info@commercialspot.ca"
+                          href="mailto:info@commercial.ca"
                           className="text-blue-600 hover:underline"
                         >
                           info@commercialspot.ca

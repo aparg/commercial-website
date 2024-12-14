@@ -65,7 +65,6 @@ const Navbar = (props) => {
       link: generateURL({ cityVal: obj.city, saleLeaseVal: "sale" }),
     };
   });
-  // console.log(generateURL({ cityVal: "Markham" }));
   function extractCityname(url) {
     const regex =
       /\/ontario\/([^/]+)\/(?:gas-station|convenience-stores|motel|restaurant|land|businesses)?-(?:for-sale|for-lease)/;
@@ -305,7 +304,7 @@ const Navbar = (props) => {
               text={isSticky || !isHomePage ? "black" : "white"}
               options={calculatorOpts}
             />
-            <Link
+            {/* <Link
               href="/blogs"
               title=""
               className={`text-sm font-normal transition-all duration-200 ${
@@ -320,7 +319,7 @@ const Navbar = (props) => {
             >
               {" "}
               Blog{" "}
-            </Link>
+            </Link> */}
 
             <Link
               href="/contact"
@@ -387,7 +386,7 @@ const Navbar = (props) => {
                 text={isSticky || !isHomePage ? "black" : "white"}
                 options={cities}
               />
-              <Link
+              {/* <Link
                 href="/blogs"
                 title=""
                 className={`text-sm font-normal transition-all duration-200 ${
@@ -402,7 +401,7 @@ const Navbar = (props) => {
               >
                 {" "}
                 Blog{" "}
-              </Link>
+              </Link> */}
               <Link
                 href="/contact"
                 title=""
@@ -432,7 +431,7 @@ const Navbar = (props) => {
                 }
              ${!isHomePage && "text-black"}`}
               >
-                <Link href="tel:4168458996" className="flex items-center">
+                <Link href="tel:9052267284" className="flex items-center">
                   <img
                     src="/images/ravi-godara.png"
                     className="rounded-full h-10 w-10"

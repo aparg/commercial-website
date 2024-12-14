@@ -59,7 +59,7 @@ const PopularCategories = () => {
     <div className="">
       <div className="flex flex-wrap justify-start sm:space-x-4 mt-4">
         {cardsData.map((card) => (
-          <TextOverImageCard {...card} />
+          <TextOverImageCard {...card} key={card.id} />
         ))}
       </div>
     </div>
