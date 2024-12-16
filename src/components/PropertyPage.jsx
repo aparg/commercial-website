@@ -115,13 +115,20 @@ const PropertyPage = ({ main_data }) => {
               </h1>
             </div>
             <div className="">
-              <a
+              <Link
                 href="#bookdate"
                 className="bg-black rounded-md text-white h-10 px-4 text-md flex items-center hover:scale-110 transform max-w-fit my-3 sm:my-0 sm:w-auto"
+                scroll={false}
+                onClick={() => {
+                  const element = document.getElementById("bookdate");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 <HeadphonesIcon className="h-5 w-5 mr-2" />
                 Contact the seller
-              </a>
+              </Link>
             </div>
           </section>
           <p

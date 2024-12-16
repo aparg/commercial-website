@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { FaArrowDown, FaChevronDown } from "react-icons/fa";
 
-const Dropdown = ({ name, options, width = "25rem" }) => {
+const Dropdown = ({ name, options, width = "25rem", onClick }) => {
   const [shown, setShown] = useState(false);
   const dropdownRef = useRef(null);
   let timeoutId = useRef(null);
@@ -56,13 +56,15 @@ const Dropdown = ({ name, options, width = "25rem" }) => {
         onMouseLeave={handleMouseLeave}
       >
         {options.map((option) => (
-          <Link
-            href={option.link}
-            className="block sm:px-4 px-2 py-2 text-gray-800 hover:drop-shadow-2xl hover:font-bold hover:shadow-2xl hover:rounded-md text-start text-sm text-nowrap whitespace-nowrap"
-            key={option.name}
-          >
-            {option.name}
-          </Link>
+          <div onClick={() => setShown(false)}>
+            <Link
+              href={option.link}
+              className="block sm:px-4 px-2 py-2 text-gray-800 hover:drop-shadow-2xl hover:font-bold hover:shadow-2xl hover:rounded-md text-start text-sm text-nowrap whitespace-nowrap"
+              key={option.name}
+            >
+              {option.name}
+            </Link>
+          </div>
         ))}
       </div>
     </div>

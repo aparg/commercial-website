@@ -21,6 +21,9 @@ const Navbar = (props) => {
   if (pathname.startsWith("/admin")) {
     return <></>;
   }
+  useEffect(() => {
+    setHidden(true);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = async () => {
@@ -426,7 +429,7 @@ const Navbar = (props) => {
                 {" "}
                 Contact{" "}
               </Link>
-              <Link
+              <div
                 href="#"
                 title=""
                 className={`text-sm font-normal transition-all duration-200 ${
@@ -449,7 +452,7 @@ const Navbar = (props) => {
                     <div className="text-xs">Speak with our team</div>
                   </div>
                 </Link>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
