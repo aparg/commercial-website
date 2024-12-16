@@ -62,7 +62,7 @@ const Slider = ({ data, type, small }) => {
       </div> */}
       <div
         className={`w-full grid grid-rows-1 grid-cols-1 ${
-          small ? "grid-cols-3" : "sm:grid-cols-4"
+          small ? "sm:rid-cols-3" : "sm:grid-cols-4"
         } overflow-x-hidden grid-nowrap justify-between sm:py-3 gap-4 auto-rows-[minmax(100px,_auto)]`}
         id="slider"
         ref={scrollRef}
