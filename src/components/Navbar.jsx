@@ -176,7 +176,7 @@ const Navbar = (props) => {
           ? "bg-white sticky top-0 z-[999] "
           : "z-[1000] md:bg-transparent "
       } 
-      ${isPropertyPage ? "min-[2000px]:max-w-[68%] mx-auto" : ""}
+      ${isPropertyPage ? "sm:max-w-[68%] mx-auto" : ""}
       container-fluid shadow-shuttle`}
     >
       <div className={`${isSticky && "sticky"}`}>
@@ -196,9 +196,17 @@ const Navbar = (props) => {
             </Link>
           </div>
 
-          <div className="flex items-center rounded-md sm:w-[35%] ms-0 sm:ms-3 ">
+          <div
+            className={`flex items-center rounded-md ${
+              isPropertyPage ? "sm:w-[25%]" : "sm:w-[35%]"
+            } ms-0 sm:ms-3 `}
+          >
             <div className="hidden sm:block w-full">
-              <SearchBar numberOfSuggestions={4} small={true} />
+              <SearchBar
+                numberOfSuggestions={4}
+                small={true}
+                placeholder="Search"
+              />
             </div>
             <div className="block sm:hidden w-full">
               <SearchBar

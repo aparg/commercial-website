@@ -32,7 +32,7 @@ import { houseType } from "@/constant";
 // import { Button } from "@nextui-org/react";
 
 const INITIAL_OFFSET = 0;
-const INITIAL_LIMIT = 4;
+const INITIAL_LIMIT = 3;
 
 const fetchData = async (listingID) => {
   const options = {
@@ -94,7 +94,7 @@ const page = async ({ params }) => {
 
   return (
     <>
-      <div className="flex justify-center min-[2000px]:max-w-[68%] mx-auto">
+      <div className="flex justify-center sm:max-w-[68%] mx-auto">
         <div>
           <script
             key={main_data.MLS}
@@ -112,10 +112,10 @@ const page = async ({ params }) => {
               <div className="hidden sm:block relative">
                 <Gallery data={imageURLs} />
                 <div className="space-x-2 order-2 sm:order-1 absolute bottom-2 left-2">
-                  <button className="bg-[#CC0B0B] p-1 text-white text-xs font-bold mt-1 mb-2 sm:my-0 w-fit-content rounded-md">
+                  <button className="bg-green-900 p-1 text-white text-xs font-bold mt-1 mb-2 sm:my-0 w-fit-content rounded-md">
                     <TimeAgo modificationTimestamp={main_data.TimestampSql} />
                   </button>
-                  <button className="bg-[#CC0B0B] p-1 text-white text-xs font-bold mt-1 mb-2 sm:my-0 w-fit-content rounded-md">
+                  <button className="bg-green-900 p-1 text-white text-xs font-bold mt-1 mb-2 sm:my-0 w-fit-content rounded-md">
                     <span>{main_data.TypeOwn1Out}</span>
                   </button>
                 </div>
@@ -124,18 +124,18 @@ const page = async ({ params }) => {
               <Carousel urls={imageURLs} />
               <div className=" w-full flex justify-center pt-0 sm:pt-4 relative">
                 <div className="grid sm:grid-cols-6 grid-cols-1 justify-between sm:justify-between w-full sm:gap-x-6 gap-y-12 sm:gap-y-0 relative">
-                  <div className={`sm:col-span-4 col-span-4 col-md-8 `}>
+                  <div className={`sm:col-span-6 col-span-4 col-md-8 `}>
                     <PropertyPage {...{ main_data }} />
                     <BookingDate bannerImage={imageURLs[0]} />
                     <div className="z-20 relative mt-12 sm:mt-24">
-                      <h2 className="font-extrabold text-2xl sm:text-4xl mb-2">
+                      <h2 className="font-bold text-2xl sm:text-4xl mb-2">
                         Map View
                       </h2>
                       <Map main_data={main_data} />
                     </div>
                   </div>
 
-                  <div
+                  {/* <div
                     className="sm:col-span-2 col-span-2 relative"
                     id="contact"
                   >
@@ -144,8 +144,8 @@ const page = async ({ params }) => {
                         address + `, ${main_data?.Municipality}, Ontario`
                       }
                     ></BookShowingForm>
-                  </div>
-                  <div className="mt-24 mb-10 col-span-4">
+                  </div> */}
+                  <div className="mt-24 mb-10 col-span-6">
                     <FAQ main_data={main_data} />
                   </div>
                 </div>
@@ -169,7 +169,7 @@ const page = async ({ params }) => {
                       cityVal: city,
                     })}
                   >
-                    <Slider data={newSalesData} type="resale" />
+                    <Slider data={newSalesData} type="resale" small={true} />
                   </PropertyDisplaySection>
                 </section>
               )}

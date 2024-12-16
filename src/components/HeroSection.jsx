@@ -23,7 +23,8 @@ const HeroSection = () => {
         {/* Hero Content */}
         <div className="max-w-4xl mx-auto text-center space-y-1">
           <h2 className="text-3xl md:text-5xl tracking-tight font-extrabold leading-[1.2] md:leading-[1.2]">
-            Canada's Leading <br className="md:block" /> Commercial Platform
+            Ontario's Largest Marketplace for <br className="md:block" />{" "}
+            Commercial Businesses for Sale
             <span className="text-red-500">.</span>
           </h2>
 

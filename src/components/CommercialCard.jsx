@@ -8,7 +8,14 @@ import { generateURL } from "@/helpers/generateURL";
 import { usePathname } from "next/navigation";
 import useDeviceView from "@/helpers/useDeviceView";
 import MobileCityResoCard from "./MobileCityResoCard";
-import { LucideWatch, Timer, Watch, WatchIcon } from "lucide-react";
+import {
+  LandPlot,
+  LucideWatch,
+  RulerIcon,
+  Timer,
+  Watch,
+  WatchIcon,
+} from "lucide-react";
 
 const CommercialCard = ({ curElem, small = false }) => {
   const { isMobileView } = useDeviceView();
@@ -26,6 +33,19 @@ const CommercialCard = ({ curElem, small = false }) => {
   const imgSrc = commercial.photos.replace(/MLS|index/gi, function (matched) {
     return mapObj[matched];
   });
+  const aboutProperty = () => {
+    let description;
+    if (curElem.TypeOwn1Out && curElem.Use)
+      description = `${[curElem.TypeOwn1Out || "", curElem.Use || null].join(
+        ", "
+      )}`;
+    else if (curElem.TypeOwn1Out) description = curElem.TypeOwn1Out;
+    else if (curElem.Use) description = curElem.Use;
+    else description = "Property";
+
+    if (curElem.SaleLease) description += ` for ${curElem.SaleLease}`;
+    return description;
+  };
   /* console.log(imgSrc); */
   const handleImageError = (e) => {
     e.target.onerror = null;
@@ -68,33 +88,47 @@ const CommercialCard = ({ curElem, small = false }) => {
             className={`flex flex-col overflow-hidden transition-all duration-200 transform bg-white shadow group rounded-xl p-0 hover:shadow-lg hover:-translate-y-1 relative`}
           >
             <div
-              className={`${small ? "h-44" : "h-52"} overflow-hidden relative`}
+              className={`${
+                small ? "h-44" : "h-[20rem]"
+              } overflow-hidden relative`}
             >
               <div className="h-full relative">
                 <img
-                  className="object-cover w-full h-full transition-all duration-200 transform group-hover:scale-110 rounded-t-md"
+                  className="object-cover w-full h-full transition-all duration-200 transform group-hover:scale-110 rounded-md"
                   src={imgSrc}
                   alt="property image"
                   onError={handleImageError}
                 />
               </div>
-              <div className="absolute bottom-3 left-2">
-                <div className="flex flex-row items-center">
-                  {curElem.Use && (
-                    <div
-                      className="text-black text-xs py-[2px] px-1 flex items-center rounded-md mx-1"
-                      style={{
-                        background: "white",
-                      }}
-                    >
-                      {curElem.Use}
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
             <div className="flex-1 sm:px-3 py-2 px-2">
-              <h2 className="font-extrabold text-2xl sm:text-3xl sm:items-center justify-start mw flex flex-col sm:flex-row">
+              <div className="flex flex-row items-center">
+                <div
+                  className="text-gray-600 font-normal text-md py-[2px] flex items-center rounded-md mx-1"
+                  style={{
+                    background: "white",
+                  }}
+                >
+                  {`${aboutProperty()} in ${curElem.Municipality}, ON`}
+                </div>
+              </div>
+              <div className="text-gray-800 text-[0.75rem] p-[2px] rounded-md bg-white flex gap-x-3 items-center">
+                <div className="flex gap-x-1">
+                  <Timer className="w-4 h-4" />
+                  <TimeAgo modificationTimestamp={curElem.TimestampSql} />
+                </div>
+                {curElem.TotalArea && (
+                  <div className="flex gap-x-1">
+                    <LandPlot className="w-4 h-4" />
+                    {curElem.TotalArea > 0
+                      ? Math.floor(curElem.TotalArea)
+                      : "N/A"}{" "}
+                    sq. ft.
+                  </div>
+                )}
+              </div>
+              <hr className="text-gray-600 my-2"></hr>
+              <h2 className="font-bold text-xl sm:text-3xl sm:items-center justify-start mw flex flex-col sm:flex-row">
                 <div className="min-w-fit ">
                   {price}
                   {""}
@@ -104,23 +138,17 @@ const CommercialCard = ({ curElem, small = false }) => {
                   )}
                 </div>
 
-                <div
+                {/* <div
                   className={`sm:shadow-lg p-1 sm:ms-1 text-black text-xs min-w-fit ${
                     small && "hidden"
                   }`}
                 >
-                  {Math.floor(curElem.TotalArea)} ft<sup>2</sup>
-                </div>
+                  {Math.floor(curElem.TotalArea)} ft
+                  <sup className="text-xs">2</sup>
+                </div> */}
               </h2>
-              <div className="text-gray-800 text-[0.75rem] p-[2px] rounded-md bg-white flex gap-x-1 items-center my-2">
-                <Timer className="w-4 h-4" />
-                <TimeAgo modificationTimestamp={curElem.TimestampSql} />
-              </div>
-              <p className="mb-0 fs-mine text-limit text-sm pb-0">
-                {" "}
-                MLS® #{curElem.MLS}
-              </p>
-              <div className="flex flex-row justify-between py-1">
+
+              <div className="flex flex-row justify-between pb-1">
                 <div className="text-black truncate text-ellipsis">
                   <div className="text-dark bva">
                     {curElem.StreetName ? (
@@ -134,8 +162,12 @@ const CommercialCard = ({ curElem, small = false }) => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row justify-between text-gray-400 text-xs py-2">
-                Listed by ${curElem.ListBrokerage}
+              <p className="mb-0 fs-mine text-limit text-sm pb-0 text-gray-400 ">
+                {" "}
+                MLS® #{curElem.MLS}
+              </p>
+              <div className="flex flex-row justify-between text-gray-400 text-xs pb-2">
+                Listed by {curElem.ListBrokerage}
               </div>
             </div>
           </div>

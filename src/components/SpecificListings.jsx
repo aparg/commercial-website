@@ -12,7 +12,7 @@ const SpecificListings = ({ topic, data }) => {
   ];
 
   return (
-    <div className="mt-10 sm:mt-20 rounded-2xl flex flex-col bg-gradient-to-br from-orange-50 to-rose-50 p-6 sm:p-8">
+    <div className="mt-10 sm:mt-20 rounded-2xl flex flex-col bg-gradient-to-br from-orange-50 to-rose-50 px-0 py-3 sm:p-8">
       {/* Main Heading with decorative elements */}
       <div className="relative mb-12">
         <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl text-center text-orange-900">

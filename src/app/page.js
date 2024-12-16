@@ -115,10 +115,9 @@ export default async function Home() {
   }
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <HeroSection />
 
-      <SeeListings />
       <MobilePromo></MobilePromo>
       <div className="mx-auto max-w-[90%] my-10 sm:my-20">
         <h3 className="text-xl sm:text-3xl font-bold w-[100%] sm:w-auto">
@@ -186,6 +185,9 @@ export default async function Home() {
           ]}
           topic="Hot Listings"
         />
+        <div className="mt-10 sm:mt-20 -mx-28">
+          <SeeListings />
+        </div>
         <PropertyDisplaySection
           title="Explore businesses in Oakville"
           subtitle=""
@@ -213,6 +215,6 @@ export default async function Home() {
         </div>
       </section>
       {/* pass props type="commercial" only for commercial card slider, default is commercial */}
-    </>
+    </div>
   );
 }

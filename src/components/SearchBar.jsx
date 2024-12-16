@@ -153,7 +153,7 @@ const SearchBar = ({
             <CgSearch size="1.25rem" className="mr-2" />
           ) : (
           )} */}
-          <CgSearch size="1.75rem" className="mr-2" />
+          <CgSearch size={small ? "1.2rem" : `1.75rem`} className="mr-2" />
         </div>
       </div>
       <div className="relative">

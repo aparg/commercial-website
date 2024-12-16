@@ -12,7 +12,7 @@ import CreateSchema from "@/helpers/CreateSchema";
 
 // type: resale/commercial
 // data: array of json properties
-const Slider = ({ data, type }) => {
+const Slider = ({ data, type, small }) => {
   const scrollRef = useRef(null); //used to hold scroll value
   const cardRef = useRef(null); //used to hold card width value
   const { isMobileView } = useDeviceView();
@@ -61,7 +61,9 @@ const Slider = ({ data, type }) => {
         </button>
       </div> */}
       <div
-        className={`w-full grid grid-rows-1 grid-cols-1 sm:grid-cols-4 overflow-x-hidden grid-nowrap justify-between sm:py-3 gap-4 auto-rows-[minmax(100px,_auto)]`}
+        className={`w-full grid grid-rows-1 grid-cols-1 ${
+          small ? "grid-cols-3" : "sm:grid-cols-4"
+        } overflow-x-hidden grid-nowrap justify-between sm:py-3 gap-4 auto-rows-[minmax(100px,_auto)]`}
         id="slider"
         ref={scrollRef}
       >

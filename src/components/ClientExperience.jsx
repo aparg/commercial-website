@@ -63,7 +63,7 @@ const ClientExperience = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
         {reviews.map((review, index) => (
           <div
             key={index}
