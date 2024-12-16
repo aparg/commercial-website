@@ -44,7 +44,7 @@ const HeroSection = () => {
         </div>
 
         {/* Builders Section */}
-        <div className="mt-20 md:mt-40 text-center">
+        {/* <div className="mt-20 md:mt-40 text-center">
           <h3 className="text-base md:text-lg mb-4 md:mb-8">
             Homes from trusted builders across the country
           </h3>
@@ -55,7 +55,7 @@ const HeroSection = () => {
             height={200}
             className="mx-auto max-w-full h-auto"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
